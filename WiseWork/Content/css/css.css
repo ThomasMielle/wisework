@@ -1,0 +1,259 @@
+html {
+	/* Pour pouvoir placer le footer */
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+
+.navbar-icon img {
+	height: 30px;
+}
+.navbar-nav .logo-profil {
+	padding-bottom: 10px;
+	padding-left: 15px;
+	padding-top: 10px;
+}
+
+.navbar-nav .logo-profil img {
+	height: 40px;
+	width: 40px;
+}
+
+.room-member {
+	height:20px;
+	width:20px;
+}
+.circle {
+	border-radius: 100%;
+}
+.nav>li.list-room-member{
+	padding:20px 3px ;
+}
+.nav>li.list-room-member>img{
+	display:block;
+}
+
+.nav>li.list-room-member>img:hover,.nav>li.list-room-member>img:focus{
+	text-decoration:none;
+	background-color:#eee
+}
+
+
+.sub-header {
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+
+/*
+ * Sidebar
+ */
+
+.sidebar {
+  display: block;
+}
+.navbar-fixed-top {
+  border: 0;
+}
+@media (min-width: 768px) {
+  .sidebar {
+    position: fixed;
+    top: 61px;
+    bottom: 0;
+    left: 0;
+   /*  z-index: 1000; */
+    display: block;
+    padding: 20px;
+    overflow-x: hidden;
+    overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+    background-color: #f5f5f5;
+    border-right: 1px solid #ccc;
+  }
+}
+
+.nav-sidebar {
+  margin-right: -21px; /* 20px padding + 1px border */
+  margin-bottom: 20px;
+  margin-left: -20px;
+}
+.nav-sidebar > li > a {
+  padding-right: 20px;
+  padding-left: 20px;
+}
+.nav-sidebar > .active > a,
+.nav-sidebar > .active > a:hover,
+.nav-sidebar > .active > a:focus {
+  color: #fff;
+  background-color: #428bca;
+}
+.nav-sidebar > li > a > .badge {
+	float: right;
+}
+
+.title-top {float: left;width: 100%;height:25px;}
+.title-top span {font-size: 12px;text-transform: uppercase;font-weight: bold;}
+.title-top .label{float:right;}
+.title-top + div {height:20px;}
+
+
+/* corps de page */
+.container-fluid {
+  margin-top: 60px;
+  padding-top: 20px;
+}
+.row-content .centerV:first-child {
+	padding-top: 18px;
+}
+/* bouton suivre */
+.togglebutton2{vertical-align:middle;}
+.togglebutton2,.togglebutton2 *{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}
+.togglebutton2 label{font-weight:400;cursor:pointer}
+.togglebutton2 label input[type=checkbox]:first-child{opacity:0;width:0;height:0}
+.togglebutton2 label input[type=checkbox]:first-child:checked+.toggle2{background-color:#228B22}
+.togglebutton2 label input[type=checkbox]:first-child:checked+.toggle2:after{background-color:#006400}
+.togglebutton2 label .toggle2,.togglebutton2 label input[type="checkbox][disabled"]:first-child+.toggle2{content:"";display:inline-block;width:30px;height:15px;background-color:rgba(80,80,80,.7);border-radius:15px;margin-right:10px;-webkit-transition:background .3s ease;transition:background .3s ease;vertical-align:middle}
+.togglebutton2 label .toggle2:after{content:"";display:inline-block;width:20px;height:20px;background-color:#f1f1f1;border-radius:20px;position:relative;box-shadow:0 1px 3px 1px rgba(0,0,0,.4);left:-5px;top:-2px;-webkit-transition:left .3s ease,background .3s ease,box-shadow .1s ease;transition:left .3s ease,background .3s ease,box-shadow .1s ease}
+.togglebutton2 label input[type="checkbox][disabled"]:first-child+.toggle2:after,.togglebutton2 label input[type="checkbox][disabled"]:checked:first-child+.toggle2:after{background-color:#bdbdbd}
+.togglebutton2 label input[type=checkbox]:first-child:checked~.toggle2:active:after{box-shadow:0 1px 3px 1px rgba(0,0,0,.4),0 0 0 15px rgba(0,149,135,.1)}
+.togglebutton2 label input[type=checkbox]:first-child~.toggle2:active:after,.togglebutton2 label input[type="checkbox][disabled"]:first-child~.toggle2:active:after{box-shadow:0 1px 3px 1px rgba(0,0,0,.4),0 0 0 15px rgba(0,0,0,.1)}
+.togglebutton2 label input[type=checkbox]:first-child:checked+.toggle2:after{left:15px}
+
+
+/* Page perso */
+.cadre{
+	float:left;
+	margin-left:2%;
+	display:block;
+}
+
+#profil {
+	display:block;
+	background: url(./../img/profilBase.GIF);
+	width: 119px;
+	height: 150px;
+	border: solid 1px black;
+	text-align: center;
+	font-size: 1.2em;
+	color: white;
+}
+#suivre{
+	display:block;
+	width:119px;
+	margin-top:1px;
+	clear:both;
+	height:30px;
+	background-color:white;
+	border:solid 1px black;
+}
+
+
+#infos {
+	background-color: white;
+	overflow: hidden;
+	float:left;
+	display:none;
+	width: 400px;
+	height: 184px;
+	font-size: 1.2em;
+}
+#form{
+	background-color: white;
+	margin:3%;
+	font-size: 1em;
+}
+
+.nom {
+	display:block;	
+	margin :2%;
+	position:relative;
+	color:Black;
+}
+
+
+.modifInfos {
+	-moz-box-shadow:inset 0px 1px 3px 0px #91b8b3;
+	-webkit-box-shadow:inset 0px 1px 3px 0px #91b8b3;
+	box-shadow:inset 0px 1px 3px 0px #91b8b3;
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #768d87), color-stop(1, #6c7c7c));
+	background:-moz-linear-gradient(top, #768d87 5%, #6c7c7c 100%);
+	background:-webkit-linear-gradient(top, #768d87 5%, #6c7c7c 100%);
+	background:-o-linear-gradient(top, #768d87 5%, #6c7c7c 100%);
+	background:-ms-linear-gradient(top, #768d87 5%, #6c7c7c 100%);
+	background:linear-gradient(to bottom, #768d87 5%, #6c7c7c 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#768d87', endColorstr='#6c7c7c',GradientType=0);
+	background-color:#768d87;
+	border:1px solid #566963;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:10px 5px;
+	text-decoration:none;
+	text-shadow:0px -1px 0px #2b665e;
+}
+.modifInfos:visited {
+	-moz-box-shadow:inset 0px 1px 3px 0px #91b8b3;
+	-webkit-box-shadow:inset 0px 1px 3px 0px #91b8b3;
+	box-shadow:inset 0px 1px 3px 0px #91b8b3;
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #768d87), color-stop(1, #6c7c7c));
+	background:-moz-linear-gradient(top, #768d87 5%, #6c7c7c 100%);
+	background:-webkit-linear-gradient(top, #768d87 5%, #6c7c7c 100%);
+	background:-o-linear-gradient(top, #768d87 5%, #6c7c7c 100%);
+	background:-ms-linear-gradient(top, #768d87 5%, #6c7c7c 100%);
+	background:linear-gradient(to bottom, #768d87 5%, #6c7c7c 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#768d87', endColorstr='#6c7c7c',GradientType=0);
+	background-color:#768d87;
+	border:1px solid #566963;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:10px 5px;
+	text-decoration:none;
+	text-shadow:0px -1px 0px #2b665e;
+}
+.modifInfos:hover {
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #6c7c7c), color-stop(1, #768d87));
+	background:-moz-linear-gradient(top, #6c7c7c 5%, #768d87 100%);
+	background:-webkit-linear-gradient(top, #6c7c7c 5%, #768d87 100%);
+	background:-o-linear-gradient(top, #6c7c7c 5%, #768d87 100%);
+	background:-ms-linear-gradient(top, #6c7c7c 5%, #768d87 100%);
+	background:linear-gradient(to bottom, #6c7c7c 5%, #768d87 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#6c7c7c', endColorstr='#768d87',GradientType=0);
+	background-color:#6c7c7c;
+	color:#ffffff;
+}
+.modifInfos:active {
+	position:relative;
+	top:1px;
+}
+
+/* footer */
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width:100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  background-color: #f5f5f5;
+}
+/* fin footer */
+
+@media (max-width:1200px) {
+.nav>li.list-room-member{
+	padding:15px 3px ;
+}
+.navbar-nav .logo-profil img {
+	height: 30px;
+	width: 30px;
+}
+}
