@@ -1,1 +1,1 @@
-# wisework
+# WiseWork - Partage intelligence malin !
