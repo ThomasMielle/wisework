@@ -1,0 +1,16 @@
+<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main" ng-controller="MsgCtrl">
+			<!-- ///////////////// DEBUT DES MODIFICATIONS PROPRES A CHAQUE PAGE ///////////////////////// -->
+	<div class="list-group">
+						
+		<div class="list-group-item" ng-repeat="msg in user.messages">
+			<div class="row-picture">
+
+				<img class="circle" src="img/photo_profil/{{msg.member.avatar}}" alt="{{ msg.member.name }}">
+			</div>
+			<div class="row-content">
+				<h4 class="list-group-item-heading">{{msg.member.name}}</h4>
+				<p class="list-group-item-text">{{msg.content}}</p>
+			</div>
+		</div>
+	</div>
+</div>
