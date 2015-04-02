@@ -1,16 +1,6 @@
-﻿<!DOCTYPE html>
-<html ng-app="wisework">
+﻿<!doctype html>
+<html lang="fr" ng-app="WiseWorkApp">
 <head>
-
-    <!-- Liaisons CSS -->
-    <meta charset="utf-8">
-    <title></title>
-    <meta name="description" content="">
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/material-wfont.min.css" rel="stylesheet">
-    <link href="css/material.min.css" rel="stylesheet">
-    <link href="css/css.css" rel="stylesheet">
-    <link href="css/styles.css" rel="stylesheet">
 
     <!-- Support mobile -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -27,156 +17,12 @@
 </head>
 <body>
 
-    <body ng-controller="LayoutController">
-        <div class="navbar navbar-material-blue-A200 navbar-fixed-top">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
+    <!-- Vue Angular -->
+    <div ng-view>
+    </div>
 
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-warning-collapse"></button>
-                <a class="navbar-brand navbar-icon" href="javascript:void(0)"><img src="img/WiseWork_Logo.png" /></a>
-                <span class="navbar-brand">{{titrePage}}</span>
-            </div><!-- /.navbar-header -->
+    <script src="../Scripts/jquery-1.9.1.min.js"></script>
 
-            <div class="navbar-collapse collapse navbar-warning-collapse">
-                <ul class="nav navbar-nav">
-                    <li class="list-room-member"><img class="room-member circle" src="img/photo_profil/profil1.jpg" /></li>
-                    <li class="list-room-member"><img class="room-member circle" src="img/photo_profil/profil2.jpg" /></li>
-                    <li class="list-room-member"><img class="room-member circle" src="img/photo_profil/profil3.jpg" /></li>
-                    <li class="list-room-member"><img class="room-member circle" src="img/photo_profil/profil4.jpg" /></li>
-                    <li class="list-room-member"><img class="room-member circle" src="img/photo_profil/profil5.jpg" /></li>
-                    <li class="list-room-member"><img class="room-member circle" src="img/photo_profil/profil6.png" /></li>
-                    <li class="list-room-member"><img class="room-member circle" src="img/photo_profil/profil7.jpg" /></li>
-                    <li class="list-room-member"><img class="room-member circle" src="img/photo_profil/profil8.jpg" /></li>
-                    <li class="list-room-member"><img class="room-member circle" src="img/photo_profil/profil9.jpg" /></li>
-                </ul>
-                <ul class="nav navbar-nav navbar-right">
-                    <li class="navbar-nav logo-profil"><img class="circle" src="img/profilLogo.jpg" />
-                    <li>
-                    <li class="dropdown">
-                        <a href="bootstrap-elements.html" data-target="#" class="dropdown-toggle" data-toggle="dropdown">Simon Persenot <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="javascript:void(0)">Créer un salon</a></li>
-                            <li><a href="javascript:void(0)">Gérer mes salons</a></li>
-                            <li class="divider"></li>
-                            <li><a href="javascript:void(0)">Déconnexion</a></li>
-                            <li class="divider"></li>
-                            <li><a href="javascript:void(0)">Aide</a></li>
-                            <li><a href="javascript:void(0)">Signaler un problème</a></li>
-                        </ul>
-                    </li>
-                </ul>
-                <div>
-                    <form class="navbar-form navbar-right">
-                        <input class="form-control" placeholder="Search" type="text">
-
-
-                    </form>
-                </div><!-- /.app -->
-            </div><!-- /.navbar-collapse -->
-        </div><!-- /.navbar -->
-
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-sm-3 col-md-2 sidebar">
-                    <!-- sidebar room - contacts -->
-                    <div class="title-top">
-                        <span class="head">Rooms</span>
-                        <span class="label label-info">manage</span>
-                    </div>
-                    <div></div>
-                    <ul class="nav nav-sidebar" id="salons">
-                        <li ng-repeat="salon in salons"><a href="#/salon/{{salon.id}}">{{salon.title}}</a></li>
-                    </ul>
-                    <div class="title-top">
-                        <span class="head">Contacts</span>
-                        <span class="label label-info">manage</span>
-                    </div>
-                    <div></div>
-                    <ul class="nav nav-sidebar" id="users">
-                        <li ng-repeat="user in users"><a href="#/conversation/{{user.id}}">{{user.name}}</a></li>
-                    </ul>
-                    <div id="searchbar-left">
-                        <!-- <input class="form-control" placeholder="Search contacts" type="text"> -->
-                        <form class="">
-                            <!--  <input class="form-control" placeholder="Search contacts" type="text" mentio  mentio-typed-text="typedTerm" mentio-items="contacts | filter:label:typedTerm" ng-model="utilisateur"> -->
-
-                            <input mentio
-                                   ng-model="theText"
-                                   mentio-id="'theText' + myIndexValue"
-                                   type="text"
-                                   class="form-control"
-                                   ng-trim="false"
-                                   size="100" />
-
-                            <mentio-menu mentio-for="'theText' + myIndexValue"
-                                         mentio-trigger-char="'@'"
-                                         mentio-items="people"
-                                         mentio-template-url="/people-mentions.tpl"
-                                         mentio-search="searchPeople(term)"
-                                         mentio-select="getPeopleTextRaw(item)"></mentio-menu>
-                        </form>
-
-                        <script type="text/ng-template" id="/people-mentions.tpl">
-                            <ul class="list-group user-search">
-                                <li mentio-menu-item="person" ng-repeat="person in items" class="list-group-item">
-                                    <img ng-src="{{person.imageUrl}}" class="user-photo">
-                                    <span class="text-primary" ng-bind-html="person.name | mentioHighlight:typedTerm:'menu-highlighted' | unsafe"></span>
-                                    <em class="text-muted" ng-bind="person.bio | words:5"></em>
-                                </li>
-                            </ul>
-                        </script>
-                    </div>
-                </div><!-- /.sidebar -->
-                <!-- Modal -->
-                <div class="modal" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                <h4 class="modal-title" id="myModalLabel">Modal title</h4>
-                            </div>
-                            <div class="modal-body">
-                                ...
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                <button type="button" class="btn btn-primary">Save changes</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Vues AngularJS -->
-                <div ng-view></div>
-
-            </div>
-        </div>
-
-        <div id="main-searchbar" style="position:absolute;bottom:0;left:16.66666%;right:0;padding:5px 10px;background-color:#EEE;border-top:1px solid #CCC;z-index:9999">
-            <input class="form-control floating-label" placeholder="use  to tag,  for auto-complete" type="text">
-        </div>
-
-        <script src="../Scripts/jquery-1.10.2.min.js"></script>
-        <script src="../Scripts/bootstrap.min.js"></script>
-        <script src="../Scripts/material.min.js"></script>
-        <script src="../Scripts/angular.min.js"></script>
-        <script src="../Scripts/angular-route.min.js"></script>
-        <script src="../Scripts/application.js"></script>
-        <script src="../Scripts/service/salon.js"></script>
-        <script src="../Scripts/service/conversation.js"></script>
-        <script src="../Scripts/mentio.min.js"></script>
-
-        <script>
-            $(document).ready(function () {
-                $.material.init();
-            });
-        </script>
-
-    </body>
-
+</body>
 </html>
 
