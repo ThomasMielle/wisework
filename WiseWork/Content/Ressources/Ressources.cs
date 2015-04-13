@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TestWebApi.Controllers.Ressources
+namespace WiseWork.Content.Ressources
 {
     public class Ressources
     {
@@ -15,18 +15,33 @@ namespace TestWebApi.Controllers.Ressources
 
         public static void initialiseData()
         {
+            listIdentifiant.Clear();
             listUtilisateur.Clear();
             listSalon.Clear();
             listProjet.Clear();
-            listPublication.Clear();
-            listCommentaire.Clear();
 
+            initIdentifiant();
             initUtilisateur();
             initSalon();
             initProjet();
-            initPublication();
-            initCommentaire();
-        } 
+        }
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        //  Identifiant
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        public static List<Identifiant> listIdentifiant = new List<Identifiant>();
+
+        private static void initIdentifiant()
+        {
+            listIdentifiant.Add(new Identifiant("Alves", "Danny"));
+            listIdentifiant.Add(new Identifiant("Dupond", "Martin"));
+            listIdentifiant.Add(new Identifiant("Bernard", "Jean"));
+            listIdentifiant.Add(new Identifiant("Leprovost", "Laurent"));
+            listIdentifiant.Add(new Identifiant("Souadji", "Mohamed"));
+            listIdentifiant.Add(new Identifiant("Hego", "Heather"));
+            listIdentifiant.Add(new Identifiant("Olhagaray", "Jordan"));
+        }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         //  Utilisateur
@@ -53,9 +68,9 @@ namespace TestWebApi.Controllers.Ressources
 
         private static void initSalon()
         {
-            listSalon.Add(new Salon("Salon Titan"));
-            listSalon.Add(new Salon("Salon Zora"));
-            listSalon.Add(new Salon("Salon Greener"));
+            listSalon.Add(new Salon(0, "Titan"));
+            listSalon.Add(new Salon(1, "Zora"));
+            listSalon.Add(new Salon(2, "Greener"));
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -73,109 +88,20 @@ namespace TestWebApi.Controllers.Ressources
             listTempUser.Add(listUtilisateur.ElementAt(1));
             listTempUser.Add(listUtilisateur.ElementAt(2));
 
-            listProjet.Add(new Projet("Titan", listTempUser));
+            listProjet.Add(new Projet(0, "Titan", listTempUser));
 
             // Projet Zora
             listTempUser.Add(listUtilisateur.ElementAt(0));
             listTempUser.Add(listUtilisateur.ElementAt(3));
             listTempUser.Add(listUtilisateur.ElementAt(4));
 
-            listProjet.Add(new Projet("Zora", listTempUser));
+            listProjet.Add(new Projet(1, "Zora", listTempUser));
 
             // Projet Greener
             listTempUser.Add(listUtilisateur.ElementAt(0));
             listTempUser.Add(listUtilisateur.ElementAt(5));
 
-            listProjet.Add(new Projet("Greener", listTempUser));
-        }
-
-        ////////////////////////////////////////////////////////////////////////////////////////////////////
-        //  Publication
-        ////////////////////////////////////////////////////////////////////////////////////////////////////
-
-        public static List<Publication> listPublication = new List<Publication>();
-
-        private static void initPublication()
-        {
-            Publication publi = new Publication(
-                listUtilisateur.ElementAt(0),
-                new DateTime(2015, 1, 10, 14, 10, 0),
-                listProjet.ElementAt(0),
-                "Le projet démarre le 15 janvier.",
-                Tag.Regulier.ToString());
-
-            listPublication.Add(publi);
-
-            //////////////////////////////////////////////////
-
-            publi = new Publication(
-                listUtilisateur.ElementAt(1),
-                new DateTime(2015, 1, 11, 10, 23, 0),
-                listProjet.ElementAt(0),
-                "Je crois qu'il y a eu un problème avec l'import des decuments sur le serveur, à régler de tout urgence.",
-                Tag.Important.ToString());
-
-            listPublication.Add(publi);
-
-            //////////////////////////////////////////////////
-            //////////////////////////////////////////////////
-
-            publi = new Publication(
-                listUtilisateur.ElementAt(3),
-                new DateTime(2015, 1, 9, 11, 3, 0),
-                listProjet.ElementAt(1),
-                "Les classes pour la gestion des ressources SQL sont terminées, je les importe dans la journée.",
-                Tag.Banal.ToString());
-
-            listPublication.Add(publi);
-
-            //////////////////////////////////////////////////
-
-            publi = new Publication(
-                listUtilisateur.ElementAt(3),
-                new DateTime(2015, 1, 10, 10, 33, 0),
-                listProjet.ElementAt(1),
-                "La doc sur les classes de gestion SQL sont à jour, je viens de les upload.",
-                Tag.Banal.ToString());
-
-            listPublication.Add(publi);
-
-            //////////////////////////////////////////////////
-            //////////////////////////////////////////////////
-
-            publi = new Publication(
-                listUtilisateur.ElementAt(5),
-                new DateTime(2015, 2, 2, 9, 53, 0),
-                listProjet.ElementAt(2),
-                "OK, gros problème le serveur a crash il y a tous juste 5 minutes, je le relance mais stoper les requetes pour 10 - 15 minutes.",
-                Tag.Critique.ToString());
-
-            listPublication.Add(publi);
-
-            //////////////////////////////////////////////////
-
-            publi = new Publication(
-                listUtilisateur.ElementAt(0),
-                new DateTime(2015, 2, 13, 11, 0, 0),
-                listProjet.ElementAt(2),
-                "Le crash serveur du 2 Février n'est absolument pas normal, réunion demain à 10 heure, vos agenda sont à jour.",
-                Tag.Important.ToString());
-
-            listPublication.Add(publi);
-        }
-
-        ////////////////////////////////////////////////////////////////////////////////////////////////////
-        //  Commentaire
-        ////////////////////////////////////////////////////////////////////////////////////////////////////
-
-        public static List<Commentaire> listCommentaire = new List<Commentaire>();
-
-        private static void initCommentaire()
-        {
-            Commentaire comm = new Commentaire(
-                listUtilisateur.ElementAt(0),
-                new DateTime(2015, 1, 11, 10, 30, 0),
-                "Exact, je les reupload correctement de suite, merci.");
+            listProjet.Add(new Projet(2, "Greener", listTempUser));
         }
     }
 }

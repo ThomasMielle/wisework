@@ -1,44 +1,34 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
+using System.Web;
 using System.Threading.Tasks;
 
 namespace WiseWork.Content.Ressources
 {
-    public class Projet
+    public class Identifiant
     {
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         //  Variables
         ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        private int id;
-        private string nom;
-        private List<Utilisateur> utilisateur;
-
+        private string login, password;
+        
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         //  Constructeurs
         ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        public Projet()
+        public Identifiant()
         {
-            initialise();
+            initialise();  
         }
 
-        public Projet(string nom)
+        public Identifiant(string login, string password)
         {
             initialise();
-
-            this.nom = nom;
-        }
-
-        public Projet(int id, string nom, List<Utilisateur> listUtilisateur)
-        {
-            initialise();
-
-            this.id = id;
-            this.nom = nom;
-            this.utilisateur = listUtilisateur;
+            
+            this.login = login;
+            this.password = password;
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -47,24 +37,28 @@ namespace WiseWork.Content.Ressources
 
         private void initialise()
         {
-            this.nom = null;
-            this.utilisateur = new List<Utilisateur>();
+            this.login = null;
+            this.password = null;           
+        }
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        //  Proprietes
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        public string Login
+        {
+            get { return login; }
+            set { login = value; }
+        }
+
+        public string Password
+        {
+            get { return password; }
+            set { password = value; }
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         //  Methodes
         ////////////////////////////////////////////////////////////////////////////////////////////////////
-
-        public string Nom
-        {
-            get { return nom; }
-            set { nom = value; }
-        }
-
-        public int Id
-        {
-            get { return id; }
-            set { id = value; }
-        }
     }
 }

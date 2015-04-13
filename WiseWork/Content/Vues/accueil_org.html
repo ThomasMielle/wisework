@@ -1,0 +1,69 @@
+﻿
+<!-- Barre navigation -->
+<div class="navbar navbar-material-blue-A200 navbar-fixed-top">
+    <!-- Logo WiseWork -->
+    <div class="navbar-header">
+        <a class="navbar-brand navbar-icon" href=""><img src="./img/WiseWork_Logo.png" /></a>
+        <!-- Titre -->
+        <span class="navbar-brand"> Titre </span>
+    </div>
+    <div class="navbar-collapse collapse navbar-warning-collapse">
+        <ul class="nav navbar-nav navbar-right">
+            <!-- Logo profil -->
+            <li class="navbar-nav logo-profil"><img class="circle" src="./img/photo_profil/profil8.jpg" /></li>
+            <li class="dropdown">
+                <!-- Menu profil -->
+                <a href="bootstrap-elements.html" data-target="#" class="dropdown-toggle" data-toggle="dropdown">Utilisateur<b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                    <li><a href="#Connexion">Connexion</a></li>
+                    <li><a href="#Communication">Communication</a></li>
+                    <li><a href="#Publication">Publication</a></li>
+                    <li><a href="#Recherche">Recherche</a></li>
+                    <li class="divider"></li>
+                    <li><a href="">Créer un salon</a></li>
+                    <li><a href="">Gérer mes salons</a></li>
+                    <li class="divider"></li>
+                    <li><a href="">Déconnexion</a></li>
+                    <li class="divider"></li>
+                    <li><a href="">Aide</a></li>
+                    <li><a href="">Signaler un problème</a></li>
+                </ul>
+            </li>
+        </ul>
+        <!-- Barre de recherche rapide -->
+        <div>
+            <form class="navbar-form navbar-right">
+                <input class="form-control" placeholder="Search" type="text">
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+    Hello
+</div>
+
+<!-- Panneau latéral -->
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar">
+            <!-- Salons -->
+            <div class="title-top">
+                <span class="head">Salons - - {{CurrentUser.Login}}</span>
+                <!--<span class="label label-info">manage</span>-->
+            </div>
+            <ul class="nav nav-sidebar" id="salons">
+                <li ng-repeat="salon in salons"><a href="">Salon 1</a></li>
+            </ul>
+
+            <!-- Contacts -->
+            <div class="title-top">
+                <span class="head">Contacts</span>
+                <!--<span class="label label-info">manage</span>-->
+            </div><br />
+            <ul class="nav nav-sidebar" id="users">
+                <li ng-repeat="user in listUtilisateur"><a href="">Alves Danny</a></li>
+            </ul>
+        </div>
+    </div>
+</div>

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TestWebApi.Controllers.Ressources
+namespace WiseWork.Content.Ressources
 {
     public class Salon
     {
@@ -12,8 +12,10 @@ namespace TestWebApi.Controllers.Ressources
         //  Variables
         ////////////////////////////////////////////////////////////////////////////////////////////////////
 
+        private int id;
         private string nom;
         private List<Utilisateur> utilisateur;
+        private List<string> listMessage;
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         //  Constructeurs
@@ -24,10 +26,11 @@ namespace TestWebApi.Controllers.Ressources
             initialise();
         }
 
-        public Salon(string nom)
+        public Salon(int id, string nom)
         {
             initialise();
 
+            this.id = id;
             this.nom = nom;
         }
 
@@ -44,5 +47,23 @@ namespace TestWebApi.Controllers.Ressources
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         //  Methodes
         ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        public string Nom
+        {
+            get { return nom; }
+            set { nom = value; }
+        }
+
+        public List<string> ListMessage
+        {
+            get { return listMessage; }
+            set { listMessage = value; }
+        }
+
+        public int Id
+        {
+            get { return id; }
+            set { id = value; }
+        }
     }
 }

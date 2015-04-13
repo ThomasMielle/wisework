@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -19,6 +20,7 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
+    <TypeScriptToolsVersion>1.0</TypeScriptToolsVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -93,10 +95,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\bootstrap-theme.css" />
-    <Content Include="Content\bootstrap-theme.min.css" />
-    <Content Include="Content\bootstrap.css" />
-    <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\css\bootstrap.min.css" />
     <Content Include="Content\css\css.css" />
     <Content Include="Content\css\material-wfont.css" />
@@ -119,48 +117,40 @@
     <Content Include="Content\img\profilLogo.jpg" />
     <Content Include="Content\img\WiseWork_Logo.png" />
     <Content Include="Content\index.html" />
-    <Content Include="Content\js\angular-route.min.js" />
-    <Content Include="Content\js\angular.min.js" />
-    <Content Include="Content\js\application.js" />
-    <Content Include="Content\js\bootstrap.min.js" />
-    <Content Include="Content\js\jquery-1.10.2.min.js" />
-    <Content Include="Content\js\material.js" />
-    <Content Include="Content\js\material.min.js" />
-    <Content Include="Content\js\mentio.min.js" />
-    <Content Include="Content\js\service\conversation.js" />
-    <Content Include="Content\js\service\salon.js" />
     <Content Include="Content\Vues\accueil.html" />
-    <Content Include="Content\Vues\conversation.html" />
-    <Content Include="Content\Vues\index.html" />
+    <Content Include="Content\Vues\accueil_org.html" />
+    <Content Include="Content\Vues\connexion.html" />
+    <Content Include="Content\Vues\connexion_org.html" />
+    <Content Include="Content\Vues\privateMsg.html" />
     <Content Include="Content\Vues\salon.html" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Icon.png" />
-    <Content Include="Scripts\angular-animate.js" />
-    <Content Include="Scripts\angular-animate.min.js" />
-    <Content Include="Scripts\angular-aria.js" />
-    <Content Include="Scripts\angular-aria.min.js" />
-    <Content Include="Scripts\angular-cookies.js" />
-    <Content Include="Scripts\angular-cookies.min.js" />
-    <Content Include="Scripts\angular-csp.css" />
-    <Content Include="Scripts\angular-loader.js" />
-    <Content Include="Scripts\angular-loader.min.js" />
-    <Content Include="Scripts\angular-messages.js" />
-    <Content Include="Scripts\angular-messages.min.js" />
-    <Content Include="Scripts\angular-mocks.js" />
-    <Content Include="Scripts\angular-resource.js" />
-    <Content Include="Scripts\angular-resource.min.js" />
-    <Content Include="Scripts\angular-route.js" />
-    <Content Include="Scripts\angular-route.min.js" />
-    <Content Include="Scripts\angular-sanitize.js" />
-    <Content Include="Scripts\angular-sanitize.min.js" />
-    <Content Include="Scripts\angular-scenario.js" />
-    <Content Include="Scripts\angular-touch.js" />
-    <Content Include="Scripts\angular-touch.min.js" />
-    <Content Include="Scripts\angular.js" />
-    <Content Include="Scripts\angular.min.js" />
-    <Content Include="Scripts\bootstrap.js" />
-    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\AngularJS\angular-animate.js" />
+    <Content Include="Scripts\AngularJS\angular-animate.min.js" />
+    <Content Include="Scripts\AngularJS\angular-aria.js" />
+    <Content Include="Scripts\AngularJS\angular-aria.min.js" />
+    <Content Include="Scripts\AngularJS\angular-cookies.js" />
+    <Content Include="Scripts\AngularJS\angular-cookies.min.js" />
+    <Content Include="Scripts\AngularJS\angular-csp.css" />
+    <Content Include="Scripts\AngularJS\angular-loader.js" />
+    <Content Include="Scripts\AngularJS\angular-loader.min.js" />
+    <Content Include="Scripts\AngularJS\angular-messages.js" />
+    <Content Include="Scripts\AngularJS\angular-messages.min.js" />
+    <Content Include="Scripts\AngularJS\angular-mocks.js" />
+    <Content Include="Scripts\AngularJS\angular-resource.js" />
+    <Content Include="Scripts\AngularJS\angular-resource.min.js" />
+    <Content Include="Scripts\AngularJS\angular-route.js" />
+    <Content Include="Scripts\AngularJS\angular-route.min.js" />
+    <Content Include="Scripts\AngularJS\angular-sanitize.js" />
+    <Content Include="Scripts\AngularJS\angular-sanitize.min.js" />
+    <Content Include="Scripts\AngularJS\angular-scenario.js" />
+    <Content Include="Scripts\AngularJS\angular-touch.js" />
+    <Content Include="Scripts\AngularJS\angular-touch.min.js" />
+    <Content Include="Scripts\AngularJS\angular.js" />
+    <Content Include="Scripts\AngularJS\angular.min.js" />
+    <Content Include="Scripts\AngularJS\bootstrap.js" />
+    <Content Include="Scripts\AngularJS\bootstrap.min.js" />
     <Content Include="Scripts\i18n\angular-locale_aa-dj.js" />
     <Content Include="Scripts\i18n\angular-locale_aa-er.js" />
     <Content Include="Scripts\i18n\angular-locale_aa-et.js" />
@@ -908,37 +898,46 @@
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="Content\bootstrap-theme.css.map" />
-    <Content Include="Content\bootstrap.css.map" />
-    <Content Include="Content\img\corps_page\Thumbs.db" />
-    <Content Include="Content\img\photo_profil\Thumbs.db" />
-    <Content Include="Content\img\Thumbs.db" />
-    <Content Include="Content\data\peopledata.json" />
-    <Content Include="Content\data\private-msg.json" />
-    <Content Include="Content\data\productdata.json" />
-    <Content Include="Content\data\salon.json" />
     <Content Include="Content\fonts\Material-Design-Icons.eot" />
     <Content Include="Content\fonts\Material-Design-Icons.ttf" />
     <Content Include="Content\fonts\Material-Design-Icons.woff" />
-    <None Include="Scripts\jquery-1.9.1.intellisense.js" />
-    <Content Include="Scripts\jquery-1.9.1.js" />
-    <Content Include="Scripts\jquery-1.9.1.min.js" />
-    <Content Include="Scripts\npm.js" />
+    <Content Include="Content\img\corps_page\Thumbs.db" />
+    <Content Include="Content\img\photo_profil\Thumbs.db" />
+    <Content Include="Content\img\Thumbs.db" />
+    <None Include="Scripts\AngularJS\jquery-1.9.1.intellisense.js" />
+    <Content Include="Scripts\AngularJS\jquery-1.9.1.js" />
+    <Content Include="Scripts\AngularJS\jquery-1.9.1.min.js" />
+    <Content Include="Scripts\Design\bootstrap.min.js" />
+    <Content Include="Scripts\Design\material.js" />
+    <Content Include="Scripts\Design\material.min.js" />
+    <Content Include="Scripts\Design\mentio.min.js" />
+    <Content Include="Scripts\AngularJS\npm.js" />
+    <None Include="Scripts\JQuery\jquery-2.1.3.intellisense.js" />
+    <Content Include="Scripts\JQuery\jquery-2.1.3.js" />
+    <Content Include="Scripts\JQuery\jquery-2.1.3.min.js" />
     <Content Include="Scripts\WebApi\app.js" />
-    <Content Include="Scripts\WebApi\controllers.js" />
+    <Content Include="Scripts\WebApi\Controllers\ConnexionController.js" />
+    <Content Include="Scripts\WebApi\Models\LocalDatabase.js" />
+    <Content Include="Scripts\WebApi\Models\User.js" />
+    <Content Include="Scripts\WebApi\Services\UserService.js" />
     <Content Include="Web.config" />
-    <Content Include="Scripts\jquery-1.9.1.min.map" />
+    <Content Include="Scripts\AngularJS\jquery-1.9.1.min.map" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="Content\Ressources\Commentaire.cs" />
+    <Compile Include="Content\Ressources\Identifiant.cs" />
+    <Compile Include="Content\Ressources\Message.cs" />
     <Compile Include="Content\Ressources\Projet.cs" />
-    <Compile Include="Content\Ressources\Publication.cs" />
     <Compile Include="Content\Ressources\Ressources.cs" />
     <Compile Include="Content\Ressources\Salon.cs" />
     <Compile Include="Content\Ressources\Utilisateur.cs" />
-    <Compile Include="Controllers\RessourceController.cs" />
+    <Compile Include="Controllers\CommunicationController.cs" />
+    <Compile Include="Controllers\ConnexionController.cs" />
+    <Compile Include="Controllers\RechercheController.cs" />
+    <Compile Include="Controllers\SalonController.cs" />
+    <Compile Include="Controllers\StartController.cs" />
+    <Compile Include="Controllers\UtilisateurController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -947,18 +946,19 @@
   <ItemGroup>
     <Content Include="Views\web.config" />
     <Content Include="packages.config" />
-    <Content Include="Scripts\version.json" />
-    <Content Include="Scripts\errors.json" />
-    <Content Include="Scripts\angular-touch.min.js.map" />
-    <Content Include="Scripts\angular-sanitize.min.js.map" />
-    <Content Include="Scripts\angular-route.min.js.map" />
-    <Content Include="Scripts\angular-resource.min.js.map" />
-    <Content Include="Scripts\angular-messages.min.js.map" />
-    <Content Include="Scripts\angular-loader.min.js.map" />
-    <Content Include="Scripts\angular-cookies.min.js.map" />
-    <Content Include="Scripts\angular-aria.min.js.map" />
-    <Content Include="Scripts\angular-animate.min.js.map" />
-    <Content Include="Scripts\angular.min.js.map" />
+    <Content Include="Scripts\AngularJS\version.json" />
+    <Content Include="Scripts\AngularJS\errors.json" />
+    <Content Include="Scripts\AngularJS\angular-touch.min.js.map" />
+    <Content Include="Scripts\AngularJS\angular-sanitize.min.js.map" />
+    <Content Include="Scripts\AngularJS\angular-route.min.js.map" />
+    <Content Include="Scripts\AngularJS\angular-resource.min.js.map" />
+    <Content Include="Scripts\AngularJS\angular-messages.min.js.map" />
+    <Content Include="Scripts\AngularJS\angular-loader.min.js.map" />
+    <Content Include="Scripts\AngularJS\angular-cookies.min.js.map" />
+    <Content Include="Scripts\AngularJS\angular-aria.min.js.map" />
+    <Content Include="Scripts\AngularJS\angular-animate.min.js.map" />
+    <Content Include="Scripts\AngularJS\angular.min.js.map" />
+    <Content Include="Scripts\JQuery\jquery-2.1.3.min.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -975,6 +975,7 @@
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
   </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
   <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
   <ProjectExtensions>

@@ -1,44 +1,25 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Web;
 
 namespace WiseWork.Content.Ressources
 {
-    public class Projet
+    public class Message
     {
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         //  Variables
         ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        private int id;
-        private string nom;
-        private List<Utilisateur> utilisateur;
-
+        private string chaine, salon;
+        
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         //  Constructeurs
         ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        public Projet()
+        public Message()
         {
-            initialise();
-        }
-
-        public Projet(string nom)
-        {
-            initialise();
-
-            this.nom = nom;
-        }
-
-        public Projet(int id, string nom, List<Utilisateur> listUtilisateur)
-        {
-            initialise();
-
-            this.id = id;
-            this.nom = nom;
-            this.utilisateur = listUtilisateur;
+            initialise();  
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -47,24 +28,28 @@ namespace WiseWork.Content.Ressources
 
         private void initialise()
         {
-            this.nom = null;
-            this.utilisateur = new List<Utilisateur>();
+            this.chaine = null;
+            this.salon = null;
+        }
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        //  Proprietes
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        public string Chaine
+        {
+            get { return chaine; }
+            set { chaine = value; }
+        }
+
+        public string Salon
+        {
+            get { return salon; }
+            set { salon = value; }
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         //  Methodes
         ////////////////////////////////////////////////////////////////////////////////////////////////////
-
-        public string Nom
-        {
-            get { return nom; }
-            set { nom = value; }
-        }
-
-        public int Id
-        {
-            get { return id; }
-            set { id = value; }
-        }
     }
 }
