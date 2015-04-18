@@ -1,0 +1,25 @@
+﻿
+<!-- Panneau latéral -->
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar">
+            <!-- Salons -->
+            <div class="title-top">
+                <span class="head">Salons</span>
+                <!--<span class="label label-info">manage</span>-->
+            </div>
+            <ul class="nav nav-sidebar" id="salons">
+                <li ng-repeat="salon in listSalon"><a href="">{{salon.nom}}</a></li>
+            </ul>
+
+            <!-- Contacts -->
+            <div class="title-top">
+                <span class="head">Contacts</span>
+                <!--<span class="label label-info">manage</span>-->
+            </div><br />
+            <ul class="nav nav-sidebar" id="users">
+                <li ng-repeat="user in listUtilisateur"><a href="">Alves Danny</a></li>
+            </ul>
+        </div>
+    </div>
+</div>

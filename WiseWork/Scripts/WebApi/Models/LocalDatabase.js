@@ -1,6 +1,6 @@
 ﻿function LocalDatabase()
 {
     return {
-        CurrentUser : null
+        CurrentUser: null
     };
 }

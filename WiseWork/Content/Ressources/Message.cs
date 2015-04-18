@@ -11,42 +11,37 @@ namespace WiseWork.Content.Ressources
         //  Variables
         ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        private string chaine, salon;
+        private int id;
+        private Utilisateur auteur;
+        private string chaine, urlFichier;
+        private DateTime date;
+        private string tag;
         
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         //  Constructeurs
         ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        public Message()
+        public Message(int id, Utilisateur auteur, string chaine, DateTime date, string tag)
         {
-            initialise();  
+            this.id = id;
+            this.auteur = auteur;
+            this.chaine = chaine;
+            this.urlFichier = null;
+            this.date = date;
+            this.tag = tag;
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         //  Initialise
         ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        private void initialise()
-        {
-            this.chaine = null;
-            this.salon = null;
-        }
+
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         //  Proprietes
         ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        public string Chaine
-        {
-            get { return chaine; }
-            set { chaine = value; }
-        }
-
-        public string Salon
-        {
-            get { return salon; }
-            set { salon = value; }
-        }
+        
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         //  Methodes

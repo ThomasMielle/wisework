@@ -14,56 +14,46 @@ namespace WiseWork.Content.Ressources
 
         private int id;
         private string nom;
-        private List<Utilisateur> utilisateur;
-        private List<string> listMessage;
+        private List<Utilisateur> listUtilisateur;
+        private List<Message> listMessage;
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         //  Constructeurs
         ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        public Salon()
-        {
-            initialise();
-        }
-
         public Salon(int id, string nom)
         {
-            initialise();
-
             this.id = id;
             this.nom = nom;
+
+            this.listUtilisateur = new List<Utilisateur>();
+            this.listMessage = new List<Message>();
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         //  Initialise
         ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        private void initialise()
-        {
-            this.nom = null;
-            this.utilisateur = new List<Utilisateur>();
-        }
+
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
-        //  Methodes
+        //  Proprietes
         ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        public string Nom
+        public List<Utilisateur> ListUtilisateur
         {
-            get { return nom; }
-            set { nom = value; }
+            get { return listUtilisateur; }
+            set { listUtilisateur = value; }
         }
 
-        public List<string> ListMessage
+        public List<Message> ListMessage
         {
             get { return listMessage; }
             set { listMessage = value; }
         }
 
-        public int Id
-        {
-            get { return id; }
-            set { id = value; }
-        }
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        //  Methodes
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
     }
 }

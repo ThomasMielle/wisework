@@ -12,58 +12,45 @@ namespace WiseWork.Content.Ressources
         //  Variables
         ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        private string nom, prenom;
-        private int age;
+        private int id;
+        private string nom, prenom, login, password;
+        private List<Utilisateur> listFollower;
         
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         //  Constructeurs
         ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        public Utilisateur()
+        public Utilisateur(int id, string nom, string prenom, string login, string password)
         {
-            initialise();  
-        }
-
-        public Utilisateur(string nom, string prenom, int age)
-        {
-            initialise();
-            
+            this.id = id;
             this.nom = nom;
             this.prenom = prenom;
-            this.age = age;
+            this.login = login;
+            this.password = password;
+
+            this.listFollower = new List<Utilisateur>();
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         //  Initialise
         ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        private void initialise()
-        {
-            this.nom = null;
-            this.prenom = null;
-            this.age = 0;            
-        }
+
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         //  Proprietes
         ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        public string Prenom
+        public string Login
         {
-            get { return prenom; }
-            set { prenom = value; }
+            get { return login; }
+            set { login = value; }
         }
 
-        public string Nom
+        public string Password
         {
-            get { return nom; }
-            set { nom = value; }
-        }
-
-        public int Age
-        {
-            get { return age; }
-            set { age = value; }
+            get { return password; }
+            set { password = value; }
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////

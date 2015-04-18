@@ -16,7 +16,7 @@ namespace WiseWork.Controllers
         ////////////////////////////////////////////////////////////////////////////////////////////////////
 
         [HttpPost]
-        public Identifiant verifIdentifiant(Identifiant identifiant)
+        public Utilisateur verifIdentifiant(Utilisateur identifiant)
         {
             Ressources.initialiseData();
 
@@ -30,29 +30,29 @@ namespace WiseWork.Controllers
                 throw new ArgumentException("Le couple Login/Password est incorrect");
 
             //TODO: Encapsuler l'accès au Ressources dans un Service
-            return Ressources.listIdentifiant.First();            
+            return Ressources.listUtilisateur.First();            
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         //      Private
         ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        private bool verifLogin(Identifiant identifiant)
+        private bool verifLogin(Utilisateur identifiant)
         {
-            foreach (Identifiant identite in Ressources.listIdentifiant)
+            foreach (Utilisateur user in Ressources.listUtilisateur)
             {
-                if (identifiant.Login == identite.Login)
+                if (identifiant.Login == user.Login)
                     return true;
             }
 
             return false;
         }
 
-        private bool verifPassword(Identifiant identifiant)
+        private bool verifPassword(Utilisateur identifiant)
         {
-            foreach (Identifiant identite in Ressources.listIdentifiant)
+            foreach (Utilisateur user in Ressources.listUtilisateur)
             {
-                if (identifiant.Password == identite.Password)
+                if (identifiant.Password == user.Password)
                     return true;
             }
 

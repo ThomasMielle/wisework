@@ -16,8 +16,8 @@ namespace WiseWork.Controllers
         ////////////////////////////////////////////////////////////////////////////////////////////////////
 
         [HttpGet]
-        public List<Salon> getAllSalon()
-        {
+        public List<Salon> getAllSalon() {
+            Ressources.initialiseData();
             return Ressources.listSalon;
         }
     }

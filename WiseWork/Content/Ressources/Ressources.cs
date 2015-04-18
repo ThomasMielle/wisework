@@ -8,56 +8,30 @@ namespace WiseWork.Content.Ressources
 {
     public class Ressources
     {
-        private enum Tag
-        {
-            Aucun, Banal, Regulier, Important, Critique
-        };
-
         public static void initialiseData()
         {
-            listIdentifiant.Clear();
             listUtilisateur.Clear();
             listSalon.Clear();
-            listProjet.Clear();
 
-            initIdentifiant();
             initUtilisateur();
             initSalon();
-            initProjet();
+            ajouteUtilisateur();
+            ajouteMessage();
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         //  Identifiant
         ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        public static List<Identifiant> listIdentifiant = new List<Identifiant>();
-
-        private static void initIdentifiant()
-        {
-            listIdentifiant.Add(new Identifiant("Alves", "Danny"));
-            listIdentifiant.Add(new Identifiant("Dupond", "Martin"));
-            listIdentifiant.Add(new Identifiant("Bernard", "Jean"));
-            listIdentifiant.Add(new Identifiant("Leprovost", "Laurent"));
-            listIdentifiant.Add(new Identifiant("Souadji", "Mohamed"));
-            listIdentifiant.Add(new Identifiant("Hego", "Heather"));
-            listIdentifiant.Add(new Identifiant("Olhagaray", "Jordan"));
-        }
-
-        ////////////////////////////////////////////////////////////////////////////////////////////////////
-        //  Utilisateur
-        ////////////////////////////////////////////////////////////////////////////////////////////////////
-
         public static List<Utilisateur> listUtilisateur = new List<Utilisateur>();
 
         private static void initUtilisateur()
         {
-            listUtilisateur.Add(new Utilisateur("Alves", "Danny", 24));
-            listUtilisateur.Add(new Utilisateur("Dupond", "Martin", 45));
-            listUtilisateur.Add(new Utilisateur("Bernard", "Jean", 41));
-            listUtilisateur.Add(new Utilisateur("Leprovost", "Laurent", 36));
-            listUtilisateur.Add(new Utilisateur("Souadji", "Mohamed", 28));
-            listUtilisateur.Add(new Utilisateur("Hego", "Heather", 26));
-            listUtilisateur.Add(new Utilisateur("Olhagaray", "Jordan", 22));
+            listUtilisateur.Add(new Utilisateur(1, "Alves", "Danny", "alves.danny", "password"));
+            listUtilisateur.Add(new Utilisateur(2, "Dupond", "Martin", "dupond.martin", "password"));
+            listUtilisateur.Add(new Utilisateur(3, "Bernard", "Jean", "bernard.jean", "password"));
+            listUtilisateur.Add(new Utilisateur(4, "Leprovost", "Laurent", "leprovost.laurent", "password"));
+            listUtilisateur.Add(new Utilisateur(5, "Hego", "Heather", "hego.heather", "password"));            
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -68,18 +42,16 @@ namespace WiseWork.Content.Ressources
 
         private static void initSalon()
         {
-            listSalon.Add(new Salon(0, "Titan"));
-            listSalon.Add(new Salon(1, "Zora"));
-            listSalon.Add(new Salon(2, "Greener"));
+            listSalon.Add(new Salon(1, "Titan"));
+            listSalon.Add(new Salon(2, "Zora"));
+            listSalon.Add(new Salon(3, "Greener"));
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
-        //  Projet
+        //  Ajoute Utilisateur
         ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        public static List<Projet> listProjet = new List<Projet>();
-
-        private static void initProjet()
+        private static void ajouteUtilisateur()
         {
             List<Utilisateur> listTempUser = new List<Utilisateur>();
 
@@ -88,20 +60,60 @@ namespace WiseWork.Content.Ressources
             listTempUser.Add(listUtilisateur.ElementAt(1));
             listTempUser.Add(listUtilisateur.ElementAt(2));
 
-            listProjet.Add(new Projet(0, "Titan", listTempUser));
+            listSalon.Add(new Salon(1, "Titan"));
+            listSalon.ElementAt(0).ListUtilisateur = listTempUser;
+            listTempUser.Clear();
 
             // Projet Zora
             listTempUser.Add(listUtilisateur.ElementAt(0));
+            listTempUser.Add(listUtilisateur.ElementAt(2));
             listTempUser.Add(listUtilisateur.ElementAt(3));
-            listTempUser.Add(listUtilisateur.ElementAt(4));
 
-            listProjet.Add(new Projet(1, "Zora", listTempUser));
+            listSalon.Add(new Salon(2, "Titan"));
+            listSalon.ElementAt(1).ListUtilisateur = listTempUser;
+            listTempUser.Clear();
 
             // Projet Greener
             listTempUser.Add(listUtilisateur.ElementAt(0));
-            listTempUser.Add(listUtilisateur.ElementAt(5));
+            listTempUser.Add(listUtilisateur.ElementAt(4));
 
-            listProjet.Add(new Projet(2, "Greener", listTempUser));
+            listSalon.Add(new Salon(3, "Titan"));
+            listSalon.ElementAt(2).ListUtilisateur = listTempUser;
+            listTempUser.Clear();
+        }
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        //  Ajoute Message
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        private static void ajouteMessage()
+        {
+            List<Message> listTempMessage = new List<Message>();
+
+            // Projet Titan
+            listTempMessage.Add(new Message(0, listUtilisateur.ElementAt(0), "Message 1 dans salon 1 : Titan", new DateTime(2015, 1, 2, 10, 5, 0), "Pas important"));
+            listTempMessage.Add(new Message(1, listUtilisateur.ElementAt(1), "Message 2 dans salon 1 : Titan", new DateTime(2015, 1, 2, 10, 15, 0), "Pas important"));
+            listTempMessage.Add(new Message(2, listUtilisateur.ElementAt(2), "Message 3 dans salon 1 : Titan", new DateTime(2015, 1, 3, 9, 30, 0), "Pas important"));
+            listTempMessage.Add(new Message(3, listUtilisateur.ElementAt(0), "Message 4 dans salon 1 : Titan", new DateTime(2015, 1, 4, 14, 26, 0), "Pas important"));
+
+            listSalon.ElementAt(0).ListMessage = listTempMessage;
+
+            // Projet Zora
+            listTempMessage.Add(new Message(4, listUtilisateur.ElementAt(0), "Message 1 dans salon 2 : Zora", new DateTime(2014, 3, 10, 10, 56, 0), "Pas important"));
+            listTempMessage.Add(new Message(5, listUtilisateur.ElementAt(1), "Message 2 dans salon 2 : Zora", new DateTime(2014, 3, 11, 17, 8, 0), "Pas important"));
+            listTempMessage.Add(new Message(6, listUtilisateur.ElementAt(2), "Message 3 dans salon 2 : Zora", new DateTime(2014, 3, 11, 18, 0, 0), "Pas important"));
+            listTempMessage.Add(new Message(7, listUtilisateur.ElementAt(0), "Message 4 dans salon 2 : Zora", new DateTime(2014, 3, 16, 6, 49, 0), "Pas important"));
+
+            listSalon.ElementAt(1).ListMessage = listTempMessage;
+
+            // Projet Greener
+            listTempMessage.Add(new Message(8, listUtilisateur.ElementAt(0), "Message 1 dans salon 2 : Greener", new DateTime(2014, 4, 1, 5, 0, 0), "Important"));
+            listTempMessage.Add(new Message(9, listUtilisateur.ElementAt(1), "Message 2 dans salon 2 : Greener", new DateTime(2014, 4, 1, 8, 3, 0), "Pas important"));
+            listTempMessage.Add(new Message(10, listUtilisateur.ElementAt(2), "Message 3 dans salon 2 : Greener", new DateTime(2014, 5, 1, 5, 0, 0), "Important"));
+            listTempMessage.Add(new Message(11, listUtilisateur.ElementAt(0), "Message 4 dans salon 2 : Greener", new DateTime(2014, 6, 1, 5, 0, 0), "Important"));
+
+            listSalon.ElementAt(2).ListMessage = listTempMessage;
+
         }
     }
 }
