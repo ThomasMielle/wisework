@@ -53,6 +53,18 @@ namespace WiseWork.Content.Ressources
             set { password = value; }
         }
 
+        public string Prenom
+        {
+            get { return prenom; }
+            set { prenom = value; }
+        }
+
+        public string Nom
+        {
+            get { return nom; }
+            set { nom = value; }
+        }
+
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         //  Methodes
         ////////////////////////////////////////////////////////////////////////////////////////////////////

@@ -1,8 +1,7 @@
 ﻿function User () {
     return {
         Id: 0,
-        Nom: ''
+        Nom: '',
+        Prenom: ''
     };
 };
-
-

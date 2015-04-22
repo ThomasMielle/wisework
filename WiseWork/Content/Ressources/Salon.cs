@@ -52,6 +52,18 @@ namespace WiseWork.Content.Ressources
             set { listMessage = value; }
         }
 
+        public string Nom
+        {
+            get { return nom; }
+            set { nom = value; }
+        }
+
+        public int Id
+        {
+            get { return id; }
+            set { id = value; }
+        }
+
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         //  Methodes
         ////////////////////////////////////////////////////////////////////////////////////////////////////

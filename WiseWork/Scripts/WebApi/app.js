@@ -1,7 +1,7 @@
 ﻿var WiseWorkApp = angular.module("WiseWorkApp", ['ngRoute', 'WiseWorkController']);
 
 WiseWorkApp.factory("UserService", UserService);
-//WiseWorkApp.factory("SalonService", SalonService);
+WiseWorkApp.factory("SalonService", SalonService);
 WiseWorkApp.factory("LocalDatabase", LocalDatabase);
 
 WiseWorkApp.config(['$routeProvider',
@@ -13,7 +13,10 @@ WiseWorkApp.config(['$routeProvider',
         }).
         when('/', {
             templateUrl: 'Vues/accueil.html',
-            //controller: 'ctrl_accueil'
+            controller: 'ctrl_accueil'
+        }).
+        when('/Salon/:id', {
+            templateUrl: 'Vues/message.html'
         }).
         otherwise({
             redirectTo: '/'

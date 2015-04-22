@@ -15,6 +15,7 @@ namespace WiseWork.Content.Ressources
 
             initUtilisateur();
             initSalon();
+
             ajouteUtilisateur();
             ajouteMessage();
         }
@@ -60,7 +61,6 @@ namespace WiseWork.Content.Ressources
             listTempUser.Add(listUtilisateur.ElementAt(1));
             listTempUser.Add(listUtilisateur.ElementAt(2));
 
-            listSalon.Add(new Salon(1, "Titan"));
             listSalon.ElementAt(0).ListUtilisateur = listTempUser;
             listTempUser.Clear();
 
@@ -69,7 +69,6 @@ namespace WiseWork.Content.Ressources
             listTempUser.Add(listUtilisateur.ElementAt(2));
             listTempUser.Add(listUtilisateur.ElementAt(3));
 
-            listSalon.Add(new Salon(2, "Titan"));
             listSalon.ElementAt(1).ListUtilisateur = listTempUser;
             listTempUser.Clear();
 
@@ -77,7 +76,6 @@ namespace WiseWork.Content.Ressources
             listTempUser.Add(listUtilisateur.ElementAt(0));
             listTempUser.Add(listUtilisateur.ElementAt(4));
 
-            listSalon.Add(new Salon(3, "Titan"));
             listSalon.ElementAt(2).ListUtilisateur = listTempUser;
             listTempUser.Clear();
         }

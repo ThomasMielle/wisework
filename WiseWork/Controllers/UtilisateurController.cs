@@ -9,23 +9,17 @@ using WiseWork.Content.Ressources;
 
 namespace WiseWork.Controllers
 {
-    public class SalonController : ApiController
+    public class UtilisateurController : ApiController
     {
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         //      Public
         ////////////////////////////////////////////////////////////////////////////////////////////////////
 
         [HttpGet]
-        public List<Salon> getAllSalon() 
+        public List<Utilisateur> getAllUser()
         {
             Ressources.initialiseData();
-            return Ressources.listSalon;
-        }
-
-        public List<Message> getAllMessage()
-        {
-            Ressources.initialiseData();
-            return Ressources.listSalon.ElementAt(0).ListMessage;
+            return Ressources.listUtilisateur;
         }
     }
 }

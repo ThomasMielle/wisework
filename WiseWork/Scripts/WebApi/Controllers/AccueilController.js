@@ -1,14 +1,22 @@
 ﻿var WiseWorkController = angular.module('WiseWorkController', []);
 
-//  
-WiseWorkController.controller('ctrl_accueil', function ($scope, $rootScope, $http, SalonService) {
+WiseWorkController.controller('ctrl_accueil', function ($scope, $rootScope, $http, SalonService, UserService) {
 
     SalonService.getAllSalon()
         .success(function () {
-            $scope.listSalon = SalonService.listSalon;
-            $rootScope.listSalon = SalonService.listSalon;
+            $rootScope.listSalon = SalonService.listSalon();
         })
         .error(function (exception) {
 
-        });
+        }
+    );
+
+    UserService.getAllUser()
+        .success(function () {
+            $rootScope.listUser = UserService.listUser();
+        })
+        .error(function (exception) {
+
+        }
+    );
 });

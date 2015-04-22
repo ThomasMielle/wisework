@@ -1,6 +1,9 @@
 ﻿function LocalDatabase()
 {
     return {
-        CurrentUser: null
+        CurrentUser: null,
+        listSalon: null,
+        listUser: null,
+        listMessage: null
     };
 }
