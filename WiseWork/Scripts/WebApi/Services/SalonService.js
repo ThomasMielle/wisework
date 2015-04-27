@@ -14,7 +14,7 @@ WiseWorkApp.factory('SalonService', function ($http, LocalDatabase) {
                 })
                 .error(function () {
                     LocalDatabase.listSalon = null;
-                   // deferred.reject("Impossible de récupérer les données");
+                    // deferred.reject("Impossible de récupérer les données");
                 });
 
             return LocalDatabase.listSalon;
@@ -32,7 +32,7 @@ WiseWorkApp.factory('SalonService', function ($http, LocalDatabase) {
                     //factory.messages = null;
                 });
             return LocalDatabase.listMessage;
-           // return LocalDatabase.listMessage;
+            // return LocalDatabase.listMessage;
         }
     };
     return factory;

@@ -921,6 +921,7 @@
     <Content Include="Scripts\WebApi\Controllers\AccueilController.js" />
     <Content Include="Scripts\WebApi\Controllers\SalonController.js" />
     <Content Include="Scripts\WebApi\Models\LocalDatabase.js" />
+    <Content Include="Scripts\WebApi\Models\Message.js" />
     <Content Include="Scripts\WebApi\Models\Salon.js" />
     <Content Include="Scripts\WebApi\Models\User.js" />
     <Content Include="Scripts\WebApi\Services\SalonService.js" />
@@ -937,7 +938,6 @@
     <Compile Include="Content\Ressources\Utilisateur.cs" />
     <Compile Include="Controllers\ConnexionController.cs" />
     <Compile Include="Controllers\SalonController.cs" />
-    <Compile Include="Controllers\StartController.cs" />
     <Compile Include="Controllers\UtilisateurController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

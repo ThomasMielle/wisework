@@ -15,7 +15,8 @@ WiseWorkApp.config(['$routeProvider',
             controller: 'ctrl_accueil'
         }).
         when('/Salon/:id', {
-            templateUrl: 'Vues/message.html'
+            templateUrl: 'Vues/message.html',
+            controller: 'ctrl_salon'
         }).
         otherwise({
             redirectTo: '/'

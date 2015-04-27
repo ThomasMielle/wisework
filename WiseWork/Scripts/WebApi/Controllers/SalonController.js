@@ -3,12 +3,8 @@ WiseWorkController.controller('ctrl_salon', ['$scope', '$rootScope', '$http', '$
 
     var idSalon = $routeParams.id;
 
-    SalonService.getAllMessage()
-        .success(function () {
-            //$rootScope.listMessage = SalonService.listMessage();
-        })
-        .error(function (exception) {
-
-        }
-    );
+    //SalonService.getAllMessage().then(function (response) {
+    //    //LocalDatabase.listSalon = response.data;
+    //    $rootScope.listMessage = response.data;
+    //});
 }]);

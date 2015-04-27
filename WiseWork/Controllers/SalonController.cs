@@ -18,13 +18,11 @@ namespace WiseWork.Controllers
         [HttpGet]
         public List<Salon> getAllSalon() 
         {
-            Ressources.initialiseData();
             return Ressources.listSalon;
         }
 
         public List<Message> getAllMessage()
         {
-            Ressources.initialiseData();
             return Ressources.listSalon.ElementAt(0).ListMessage;
         }
     }

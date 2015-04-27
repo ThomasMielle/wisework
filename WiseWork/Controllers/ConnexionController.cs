@@ -18,7 +18,6 @@ namespace WiseWork.Controllers
         [HttpPost]
         public Utilisateur verifIdentifiant(Utilisateur identifiant)
         {
-            Ressources.initialiseData();
 
             if (identifiant == null)
                 throw new ArgumentException("identifiant ne doit pas être null");

@@ -8,7 +8,14 @@ namespace WiseWork.Content.Ressources
 {
     public class Ressources
     {
-        public static void initialiseData()
+
+        static Ressources()
+        {
+            initialiseData();
+        }
+
+
+        private static void initialiseData()
         {
             listUtilisateur.Clear();
             listSalon.Clear();
