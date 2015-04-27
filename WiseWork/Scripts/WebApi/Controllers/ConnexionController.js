@@ -1,5 +1,4 @@
-﻿var WiseWorkController = angular.module('WiseWorkController', []);
-
+﻿
 //  Vérifie la combinaison "login" et "password"
 WiseWorkController.controller('ctrl_connexion', function ($scope, $rootScope, $http, UserService) {
 

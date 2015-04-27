@@ -1,7 +1,6 @@
 ﻿var WiseWorkApp = angular.module("WiseWorkApp", ['ngRoute', 'WiseWorkController']);
+var WiseWorkController = angular.module('WiseWorkController', []);
 
-WiseWorkApp.factory("UserService", UserService);
-WiseWorkApp.factory("SalonService", SalonService);
 WiseWorkApp.factory("LocalDatabase", LocalDatabase);
 
 WiseWorkApp.config(['$routeProvider',
