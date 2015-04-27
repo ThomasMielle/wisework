@@ -6,11 +6,11 @@ WiseWorkApp.factory("LocalDatabase", LocalDatabase);
 WiseWorkApp.config(['$routeProvider',
   function ($routeProvider) {
       $routeProvider.
-        when('/no-route', {
+        when('/', {
             templateUrl: 'Vues/connexion.html',
             controller: 'ctrl_connexion'
         }).
-        when('/', {
+        when('/accueil', {
             templateUrl: 'Vues/accueil.html',
             controller: 'ctrl_accueil'
         }).

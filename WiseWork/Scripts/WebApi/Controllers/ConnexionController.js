@@ -1,6 +1,6 @@
 ﻿
 //  Vérifie la combinaison "login" et "password"
-WiseWorkController.controller('ctrl_connexion', function ($scope, $rootScope, $http, UserService) {
+WiseWorkController.controller('ctrl_connexion', function ($scope, $rootScope, $http, UserService,$location) {
 
     $scope.identifiant = {};
     $scope.identifiant.login = '';
@@ -8,13 +8,14 @@ WiseWorkController.controller('ctrl_connexion', function ($scope, $rootScope, $h
     $scope.CurrentUser = null;
 
     $scope.verifIdentifiant = function () {
-        UserService.Authentifier($scope.identifiant.login, $scope.identifiant.password)
-         .success(function () {
-             $scope.notificationConnexion = "Bonjour " + UserService.CurrentUser().Login;
-             $rootScope.CurrentUser = UserService.CurrentUser();
-         })
-         .error(function (exception) {
-            $scope.notificationConnexion = exception.ExceptionMessage;
-         });
+        UserService.Authentifier($scope.identifiant.login, $scope.identifiant.password).then(function (response) {
+            $rootScope.CurrentUser = response.data;
+            if (response.data != null) {
+                 $location.path("/accueil");
+            } else {
+                alert(response.data);
+            }
+        })
     }
+
 });
