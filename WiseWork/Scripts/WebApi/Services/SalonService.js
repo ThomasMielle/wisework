@@ -2,7 +2,7 @@
 WiseWorkApp.factory('SalonService', function ($http, LocalDatabase) {
 
     var factory = {
-        getAllSalon: function() {
+        getAllSalon: function () {
             //var deferred = $q.defer();
             var chemin = "/api/Salon/getSalons";
 
@@ -19,20 +19,48 @@ WiseWorkApp.factory('SalonService', function ($http, LocalDatabase) {
 
             return LocalDatabase.listSalon;
         },
-        getAllMessage: function() {
-            var chemin = "/api/Salon/getAllMessage";
+        important: function (idMess, nomSalon) {
+            var chemin = "/api/Salon/updateTag";
 
-            return $http.get(chemin)
-                .success(function (listAllMessage) {
-                    LocalDatabase.listMessage = listAllMessage;
-                    //factory.messages = listAllMessage;
+            return $http.post(chemin, '"' + nomSalon + ',' + idMess + '"')
+                .success(function (listMessage) {
+                    LocalDatabase.listMessage = listMessage;
                 })
                 .error(function () {
                     LocalDatabase.listMessage = null;
-                    //factory.messages = null;
                 });
             return LocalDatabase.listMessage;
-            // return LocalDatabase.listMessage;
+        },
+        vue: function (vue, nomSalon) {
+            var chemin = "/api/Salon/vue"
+            return $http.post(chemin, '"' + nomSalon + ',' + vue + '"')
+            .success(function (data) {
+                LocalDatabase.listMessage = data;
+            })
+            return LocalDatabase.listMessage;
+        },
+        filtreDateFunction: function (datas) {
+            var chemin = "/api/Salon/filtreDate";
+            return $http.post(chemin, datas)
+                .success(function (data) {
+                    LocalDatabase.listMessage = data;
+                })
+            return LocalDatabase.listMessage;
+        },
+        envoiMessage: function (nomSalon, message) {
+            datas = { nomSalon: nomSalon, idUtilisateur: LocalDatabase.CurrentUser.Id, message: message }
+            return $http.post("/api/Salon/ajouterMessage", datas)
+                .success(function (data) {
+                    LocalDatabase.listMessage = data.ListMessage;
+                });
+            return LocalDatabase.listMessage;
+        },
+        initialisationSalon: function (nomSalon) {
+            return $http.post("/api/Salon/getSalon", '"' + nomSalon + '"')
+                .success(function (data) {
+                    LocalDatabase.listMessage = data.ListMessage;
+                });
+            return LocalDatabase.listMessage;
         }
     };
     return factory;
