@@ -1,14 +1,6 @@
 ﻿//  Controller gérant l'affichage et la mise a jour d'un salon
 WiseWorkController.controller('ctrl_salon', function ($scope, $rootScope, $routeParams, $http, SalonService) {
     //initialisation affichage filtre
-    $scope.hideFiltres = true;
-    $scope.hideFiltreDate = true;
-
-    //initialisation filtre date
-    $scope.dateMin = new Date(2014, 00, 01, 0, 0, 0, 0);
-    $scope.absoluteDateMin = new Date(2014, 00, 01, 0, 0, 0, 0);
-    $scope.absoluteDateMax = new Date();
-    $scope.dateMax = new Date();
 
     // fonction pour changer l'importance d'un message
     $scope.important = function (idMess) {
@@ -71,5 +63,16 @@ WiseWorkController.controller('ctrl_salon', function ($scope, $rootScope, $route
         .then(function (response) {
             $scope.ListMessage = response.data.ListMessage;
             $scope.nomSalon = $routeParams.salonNom;
+            $scope.newMessage = "";
+
+            $scope.hideFiltres = true;
+            $scope.hideFiltreDate = true;
+
+            //initialisation filtre date
+            $scope.dateMin = new Date(2014, 00, 01, 0, 0, 0, 0);
+            $scope.absoluteDateMin = new Date(2014, 00, 01, 0, 0, 0, 0);
+            $scope.absoluteDateMax = new Date();
+            $scope.dateMax = new Date();
+
         });
 });
