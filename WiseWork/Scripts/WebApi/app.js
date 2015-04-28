@@ -21,6 +21,10 @@ WiseWorkApp.config(['$routeProvider',
         when('/aide', {
             templateUrl: 'Vues/aide.html'
         }).
+        when('/deconnexion', {
+            templateUrl: 'Vues/connexion.html',
+            controller: 'ctrl_deconnexion'
+        }).
         otherwise({
             redirectTo: '/'
         });
