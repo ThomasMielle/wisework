@@ -159,6 +159,7 @@
     <Content Include="Content\img\WiseWork_Logo.png" />
     <Content Include="Content\index.html" />
     <Content Include="Content\Vues\accueil.html" />
+    <Content Include="Content\Vues\aide.html" />
     <Content Include="Content\Vues\connexion.html" />
     <Content Include="Content\Vues\Elements\barreMenu.html" />
     <Content Include="Content\Vues\Elements\mainSearchBar.html" />

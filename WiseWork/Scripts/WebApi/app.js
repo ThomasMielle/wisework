@@ -18,6 +18,9 @@ WiseWorkApp.config(['$routeProvider',
             templateUrl: 'Vues/salon.html',
             controller: 'salonController'
         }).
+        when('/aide', {
+            templateUrl: 'Vues/aide.html'
+        }).
         otherwise({
             redirectTo: '/'
         });
