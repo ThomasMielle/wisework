@@ -12,8 +12,14 @@
     <link href="css/styles.css" rel="stylesheet">
 </head>
 <body>
+  
+    <div ng-if="CurrentUser == null">
+        <div ng-include="'Vues/connexion.html'" ng-controller="ctrl_connexion"></div>
+    </div>
 
-    <div ng-view></div>
+    <div ng-if="CurrentUser != null">
+        <div ng-view></div>
+    </div>
 
     <!--
         ////////////////////////////////////////////////////////////////////////////////////////////////////

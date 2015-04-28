@@ -22,6 +22,8 @@ WiseWorkController.controller('ctrl_connexion', function ($scope, $rootScope, $h
 
 WiseWorkController.controller('ctrl_deconnexion', function ($scope, $rootScope, $http, $location, LocalDatabase) {
     
+    LocalDatabase.notificationConnexion = null;
+    $rootScope.notificationConnexion = null;
     LocalDatabase.CurrentUser = null;
     $rootScope.CurrentUser = null;
     $location.path("/");
