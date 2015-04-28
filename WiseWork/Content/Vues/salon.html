@@ -90,6 +90,8 @@
         </div>  
     </div>
     <div id="main-searchbar">
-        <input class="form-control floating-label" placeholder="use tag" type="text" ng-model="newMessage" ng-keyup="envoyerMessage($event)">
+        <form ng-submit="envoyerMessage()">
+            <input class="form-control floating-label" placeholder="use tag" type="text" ng-model="newMessage">
+        </form>
     </div>
 </div>
