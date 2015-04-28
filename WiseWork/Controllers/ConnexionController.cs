@@ -18,7 +18,8 @@ namespace WiseWork.Controllers
         [HttpPost]
         public Utilisateur verifIdentifiant(UtilisateurTest identifiant)
         {
-            Ressources.initialiseData();
+            //Ressources.initialiseData();
+            RessourcesSimon.initData();
 
             if (identifiant == null)
                 throw new ArgumentException("identifiant ne doit pas être null");
@@ -41,7 +42,7 @@ namespace WiseWork.Controllers
 
         private bool verifLogin(UtilisateurTest identifiant)
         {
-            foreach (Utilisateur user in Ressources.listUtilisateur)
+            foreach (Utilisateur user in RessourcesSimon.listUtilisateur)
             {
                 if (identifiant.login == user.Login)
                     return true;
@@ -52,7 +53,7 @@ namespace WiseWork.Controllers
 
         private Utilisateur verifPassword(UtilisateurTest identifiant)
         {
-            foreach (Utilisateur user in Ressources.listUtilisateur)
+            foreach (Utilisateur user in RessourcesSimon.listUtilisateur)
             {
                 if (identifiant.password == user.Password)
                     return user;
