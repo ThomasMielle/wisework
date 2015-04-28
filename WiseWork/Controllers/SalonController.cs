@@ -154,7 +154,7 @@ namespace WiseWork.Controllers
         [HttpGet]
         public List<Salon> getSalons()
         {
-            RessourcesSimon.initData();
+            //RessourcesSimon.initData();
             return RessourcesSimon.listSalon;
         }
     }

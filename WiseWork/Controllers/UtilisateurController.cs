@@ -18,7 +18,7 @@ namespace WiseWork.Controllers
         [HttpGet]
         public List<Utilisateur> getAllUser()
         {
-            return Ressources.listUtilisateur;
+            return RessourcesSimon.listUtilisateur;
         }
     }
 }
