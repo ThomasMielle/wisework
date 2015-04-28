@@ -13,7 +13,7 @@ namespace WiseWork.Content.Ressources
         ////////////////////////////////////////////////////////////////////////////////////////////////////
 
         private int id;
-        private string nom, prenom, login, password;
+        private string nom, prenom, login, password, urlImg;
         private List<Utilisateur> listFollower;
         
         ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -30,7 +30,17 @@ namespace WiseWork.Content.Ressources
 
             this.listFollower = new List<Utilisateur>();
         }
+        public Utilisateur(int id, string nom, string prenom, string login, string password, string urlImg)
+        {
+            this.id = id;
+            this.nom = nom;
+            this.prenom = prenom;
+            this.login = login;
+            this.password = password;
+            this.urlImg = urlImg;
 
+            this.listFollower = new List<Utilisateur>();
+        }
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         //  Initialise
         ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -52,17 +62,24 @@ namespace WiseWork.Content.Ressources
             get { return password; }
             set { password = value; }
         }
-
+        public string Nom
+        {
+            get { return nom; }
+            set { nom = value; }
+        }
         public string Prenom
         {
             get { return prenom; }
             set { prenom = value; }
         }
-
-        public string Nom
+        public string UrlImg
         {
-            get { return nom; }
-            set { nom = value; }
+            get { return urlImg; }
+            set { urlImg = value; }
+        }
+        public int Id
+        {
+            get { return id; }
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////

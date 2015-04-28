@@ -121,6 +121,7 @@
     <Content Include="Content\Vues\connexion.html" />
     <Content Include="Content\Vues\Elements\barreMenu.html" />
     <Content Include="Content\Vues\Elements\voletMenu.html" />
+    <Content Include="Content\Vues\listSalons.html" />
     <Content Include="Content\Vues\message.html" />
     <Content Include="Content\Vues\privateMsg.html" />
     <Content Include="Content\Vues\salon.html" />
@@ -932,12 +933,18 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Content\Ressources\DateTest.cs" />
     <Compile Include="Content\Ressources\Message.cs" />
+    <Compile Include="Content\Ressources\NouveauMessage.cs" />
     <Compile Include="Content\Ressources\Ressources.cs" />
+    <Compile Include="Content\Ressources\RessourcesSimon.cs" />
     <Compile Include="Content\Ressources\Salon.cs" />
     <Compile Include="Content\Ressources\Utilisateur.cs" />
+    <Compile Include="Content\Ressources\UtilisateurTest.cs" />
     <Compile Include="Controllers\ConnexionController.cs" />
     <Compile Include="Controllers\SalonController.cs" />
+    <Compile Include="Controllers\SalonsController.cs" />
+    <Compile Include="Controllers\StartController.cs" />
     <Compile Include="Controllers\UtilisateurController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

@@ -2,53 +2,94 @@
 <div ng-include="'Vues/Elements/barreMenu.html'"></div>
 <div ng-include="'Vues/Elements/voletMenu.html'"></div>
 
-<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main" ng-controller="SalonCtrl" style="position:relative">
-    <!-- ///////////////// DEBUT DES MODIFICATIONS PROPRES A CHAQUE PAGE ///////////////////////// -->
-    <div class="list-group">
-
-        <!--<div class="list-group-item" ng-repeat="msg in salon.messages">
-            <div class="row-picture">
-
-                <img class="circle" src="img/photo_profil/{{msg.member.avatar}}" alt="{{ msg.member.name }}">
-            </div>
-            <div class="row-content">
-                <h4 class="list-group-item-heading">{{msg.member.name}}</h4>
-                <p class="list-group-item-text">{{msg.content}}</p>
-            </div>
-        </div>
-						<div class="list-group-separator"></div>-->
-        <div class="list-group-item">
-            <div class="row-picture">
-                <img class="circle" src="img/profilLogo.jpg" alt="Simon Persenot">
-            </div>
-            <div class="row-content">
-                <h4 class="list-group-item-heading">Simon Persenot</h4>
-                <p class="list-group-item-text">J'ai fini le design de la page d'acceuil de l'appli, je dépose ça dans 5 minutes après avoir tout mis au propre.</p>
-                <p class="list-group-item-text">Voilà c'est fini, je passe donc a la page perso, je devrai finir d'ici demain.</p>
-            </div>
-        </div>
-        <div class="list-group-separator"></div>
-        <div class="list-group-item">
-            <div class="row-picture">
-                <img class="circle" src="img/corps_page/logo_drive.png" alt="Drive">
-            </div>
-            <div class="row-content">
-                <p class="list-group-item-text centerV"><strong>Simon Persenot</strong> a ajouté <a href="download/design_appli.png"><span class="fichier">design de l'appli</span></a></p>
-            </div>
-        </div>
-        <div class="list-group-separator"></div>
-        <div class="list-group-item">
-            <div class="row-picture">
-                <img class="circle" src="img/photo_profil/profil9.jpg" alt="Lara Croft">
-            </div>
-            <div class="row-content">
-                <h4 class="list-group-item-heading">Lara Croft</h4>
-                <p class="list-group-item-text">Merci, je m'occupe d'intégrer ça !</p>
-            </div>
-        </div> 
+<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main" style="position:relative">
+    <!-- comment marche le logo important : 
+         si on clique dessus le controllerJS prend la main
+         -->
+    <div class="showFiltres" ng-click="hideFiltresFunction()">
+        <h5>Filtrer les messages</h5>
     </div>
-
+    <div class="filtres" ng-hide="hideFiltres">
+        <a href="javascript:void(0)" ng-click="vue('normal')" class="btn btn-flat btn-default">Normal</a>
+        <a href="javascript:void(0)" ng-click="vue('important')" class="btn btn-flat btn-default">Important</a>
+        <a href="javascript:void(0)" ng-click="vue('Drive')" class="btn btn-flat btn-default">Fichiers</a>
+        <a href="javascript:void(0)" ng-click="vue('Rdv')" class="btn btn-flat btn-default">Rendez-vous</a>
+        <a href="javascript:void(0)" ng-click="hideFiltreDateFunction()" class="btn btn-flat btn-default">Date</a>
+        <input ng-model="query" id="searchSalon" placeholder="Search" type="text">
+    </div>
+    <div class="form-group filtreDate col-md-12" ng-hide="hideFiltreDate">
+        <div class="col-md-1"></div>
+        <div class="col-md-4">
+            <span class="col-md-6" style="padding-top:5px">Messages parus aprÃ¨s le</span>
+            <p class="input-group col-md-6">
+                <input type="text" class="form-control" datepicker-popup="dd/MM/yyyy" ng-model="dateMin" is-open="dateMinOpened" min-date="absoluteDateMin" max-date="dateMax" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" close-text="Close" />
+                <span class="input-group-btn">
+                    <button type="button" class="btn btn-default" ng-click="openDateMin($event)">choisir</button>
+                </span>
+            </p>
+        </div>
+        <div class="col-md-4">
+            <span class="col-md-6" style="padding-top:5px">Messages parus avant le</span>
+            <div class="col-md-6">
+                <p class="input-group">
+                    <input type="text" class="form-control" datepicker-popup="dd/MM/yyyy" ng-model="dateMax" is-open="dateMaxOpened" min-date="dateMin" max-date="absoluteDateMax" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" close-text="Close" />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="openDateMax($event)">choisir</button>
+                    </span>
+                </p>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <button type="button" ng-click="filtreDateFunction()" class="btn btn-flat btn-default" style="margin:0px">Filtrer Date</button>
+        </div>
+    </div>
+    
+    <div class="list-group" id="main-container" style="margin-top:10px">
+        <h1 style="text-align:center">{{nomSalon}}</h1>
+        <div ng-repeat="msg in ListMessage | filter:query">
+            <div class="list-group-item">
+                <div ng-switch on="msg.Tag">
+                    <div ng-switch-when="">
+                        <!-- si pas de tag-->
+                        <!-- affichage du message -->
+                        <div class="row-picture">
+                            <img class="circle" src="{{msg.Auteur.UrlImg}}" alt="{{ msg.Auteur.PSrenom }} {{msg.auteur.Nom}}">
+                        </div>
+                        <div class="row-content">
+                            <h4 class="list-group-item-heading">{{msg.Auteur.Prenom}} {{msg.Auteur.Nom}}</h4>
+                            <p class="list-group-item-text">{{msg.Chaine}}</p>
+                        </div>
+                    </div>
+                    <div ng-switch-when="Drive">
+                        <div class="row-picture">
+                            <img class="circle" src="img/corps_page/logo_drive.png" alt="Drive">
+                        </div>
+                        <div class="row-content">
+                            <p class="list-group-item-text centerV"><strong>{{msg.Auteur.Prenom}} {{msg.Auteur.Nom}}</strong> a ajoutÃ© <a href="download/design_appli.png"><span class="fichier">{{msg.Chaine}}</span></a></p>
+                        </div>
+                    </div>
+                    <div ng-switch-when="JourSeparateur">
+                        <div class="separator">{{msg.Chaine}}</div>
+                    </div>
+                    <div ng-switch-default>
+                        <h1>PROBLEME</h1>
+                    </div>
+                </div>
+                <div ng-if="msg.Tag != 'JourSeparateur'">
+                    <div class="horodatage">{{msg.Hour}}:{{msg.Minute}}</div>
+                    <div ng-if="msg.Important">
+                        <!-- si message est important-->
+                        <div ng-click="important(msg.Id)" class="important"><img class="circle" src="img/corps_page/logo_important.png"></div>
+                    </div>
+                    <div ng-if="!msg.Important">
+                        <!-- si message est pas important-->
+                        <div ng-click="important(msg.Id)" class="non-important"><img class="circle" src="img/corps_page/logo_important.png"></div>
+                    </div>
+                </div>
+            </div>
+        </div>  
+    </div>
     <div id="main-searchbar">
-        <input class="form-control floating-label" placeholder="use tag" type="text">
+        <input class="form-control floating-label" placeholder="use tag" type="text" ng-model="newMessage" ng-keyup="envoyerMessage($event)">
     </div>
 </div>

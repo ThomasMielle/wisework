@@ -4,7 +4,7 @@ WiseWorkApp.factory('SalonService', function ($http, LocalDatabase) {
     var factory = {
         getAllSalon: function() {
             //var deferred = $q.defer();
-            var chemin = "/api/Salon/getAllSalon";
+            var chemin = "/api/Salons/getAllSalon";
 
             return $http.get(chemin)
                 .success(function (listAllSalon) {

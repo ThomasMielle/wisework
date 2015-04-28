@@ -16,8 +16,9 @@ namespace WiseWork.Controllers
         ////////////////////////////////////////////////////////////////////////////////////////////////////
 
         [HttpPost]
-        public Utilisateur verifIdentifiant(Utilisateur identifiant)
+        public Utilisateur verifIdentifiant(UtilisateurTest identifiant)
         {
+            Ressources.initialiseData();
 
             if (identifiant == null)
                 throw new ArgumentException("identifiant ne doit pas être null");
@@ -25,37 +26,39 @@ namespace WiseWork.Controllers
             if (!verifLogin(identifiant))
                 throw new ArgumentException("Identifiant incorrect");
 
-            if (!verifPassword(identifiant))
+            Utilisateur user = verifPassword(identifiant) ;
+            
+            if (User == null)
                 throw new ArgumentException("Le couple Login/Password est incorrect");
 
             //TODO: Encapsuler l'accès au Ressources dans un Service
-            return Ressources.listUtilisateur.First();            
+            return user;            
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         //      Private
         ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        private bool verifLogin(Utilisateur identifiant)
+        private bool verifLogin(UtilisateurTest identifiant)
         {
             foreach (Utilisateur user in Ressources.listUtilisateur)
             {
-                if (identifiant.Login == user.Login)
+                if (identifiant.login == user.Login)
                     return true;
             }
 
             return false;
         }
 
-        private bool verifPassword(Utilisateur identifiant)
+        private Utilisateur verifPassword(UtilisateurTest identifiant)
         {
             foreach (Utilisateur user in Ressources.listUtilisateur)
             {
-                if (identifiant.Password == user.Password)
-                    return true;
+                if (identifiant.password == user.Password)
+                    return user;
             }
 
-            return false;
+            return null;
         }
     }
 }
