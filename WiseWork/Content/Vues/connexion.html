@@ -4,7 +4,7 @@
         <div class="panel panel-info">
 
             <div class="panel-heading">
-                <div class="panel-title">Sign In</div>
+                <div class="panel-title">Connexion à WiseWork</div>
             </div>
 
             <div style="padding-top:30px" class="panel-body">
@@ -16,21 +16,21 @@
 
                 <div style="margin-bottom: 25px" class="input-group">
                     <span class="input-group-addon icon-connexion"><i class="mdi-action-account-circle"></i></span>
-                    <input id="login-username" type="text" class="form-control" name="username" value="" placeholder="enter username or email" ng-model="identifiant.login">
+                    <input id="login-username" type="text" class="form-control" name="username" value="" placeholder="Identifiant ou e-mail" ng-model="identifiant.login">
                 </div>
 
                 <div style="margin-bottom: 25px" class="input-group">
                     <span class="input-group-addon icon-connexion"><i class="mdi-action-lock"></i></span>
-                    <input id="login-password" type="password" class="form-control" name="password" placeholder="enter password" ng-model="identifiant.password">
+                    <input id="login-password" type="password" class="form-control" name="password" placeholder="Mot de passe" ng-model="identifiant.password">
                 </div>
 
-                <p>Notif : {{notificationConnexion}}</p>
+                <p style="float:left; margin:25px 0 25px 25px;">Notif : {{notificationConnexion}}</p>
 
                 <div style="margin-top:10px" class="form-group">
                     <!-- Button -->
 
                     <div class="col-sm-12 controls">
-                        <input id="btn-login" class="btn btn-info" type="submit" value="Connexion" />
+                        <input id="btn-login" style="float:right; margin:-50px 50px 10px 0;" class="btn btn-info" type="submit" value="Connexion" />
                         <!--<a id="btn-login" href="#" class="btn btn-info">Login </a>-->
                     </div>
                 </div>
