@@ -14,10 +14,6 @@ WiseWorkApp.config(['$routeProvider',
             templateUrl: 'Vues/accueil.html',
             controller: 'ctrl_accueil'
         }).
-        when('/salons', {
-            templateUrl: 'Vues/listSalons.html',
-            controller: 'salonsController'
-        }).
         when('/salon/:salonNom', {
             templateUrl: 'Vues/salon.html',
             controller: 'salonController'
@@ -121,10 +117,4 @@ WiseWorkController.controller('salonController', ['$scope', '$http', '$routePara
     }
 ]);
 
-WiseWorkController.controller('salonsController', ['$scope', '$http',
-    function ($scope, $http) {
-        $http.get('/api/Salon/getSalons').success(function (data) {
-            $scope.salons = data;
-        });
-    }
-]);
+
