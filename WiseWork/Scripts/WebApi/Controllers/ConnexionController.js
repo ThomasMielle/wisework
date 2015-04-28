@@ -8,14 +8,17 @@ WiseWorkController.controller('ctrl_connexion', function ($scope, $rootScope, $h
     $scope.CurrentUser = null;
 
     $scope.verifIdentifiant = function () {
-        UserService.Authentifier($scope.identifiant.login, $scope.identifiant.password).then(function (response) {
-            $rootScope.CurrentUser = response.data;
-            if (response.data != null) {
-                 $location.path("/accueil");
-            } else {
+        UserService.Authentifier($scope.identifiant.login, $scope.identifiant.password)
+            .then(function (response) {
+                $rootScope.CurrentUser = response.data;
+                if (response.data != null) {
+                    $location.path("/accueil");
+                } else {
+                    $rootScope.notificationConnexion = "Le couple Login/Password est incorrect";
+                }
+            })
+            .then(function (response){
                 alert(response.data);
-            }
-        })
-    }
-
+            })
+        };
 });

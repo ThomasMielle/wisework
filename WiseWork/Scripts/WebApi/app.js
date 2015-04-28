@@ -117,4 +117,3 @@ WiseWorkController.controller('salonController', ['$scope', '$http', '$routePara
     }
 ]);
 
-

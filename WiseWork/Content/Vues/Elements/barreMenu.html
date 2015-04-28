@@ -4,8 +4,6 @@
     <!-- Logo WiseWork -->
     <div class="navbar-header">
         <a class="navbar-brand navbar-icon" href="#/accueil"><img src="./img/WiseWork_Logo.png" /></a>
-        <!-- Titre -->
-        <span class="navbar-brand"> Titre </span>
     </div>
     <div class="navbar-collapse collapse navbar-warning-collapse">
         <ul class="nav navbar-nav navbar-right">
@@ -13,7 +11,7 @@
             <li class="navbar-nav logo-profil"><img class="circle" src="{{CurrentUser.UrlImg}}" /></li>
             <li class="dropdown">
                 <!-- Menu profil -->
-                <a href="bootstrap-elements.html" data-target="#" class="dropdown-toggle" data-toggle="dropdown">{{CurrentUser.Nom}}<b class="caret"></b></a>
+                <a href="bootstrap-elements.html" data-target="#" class="dropdown-toggle" data-toggle="dropdown"> {{CurrentUser.Prenom}} {{CurrentUser.Nom}} <b class="caret"></b></a>
                 <ul class="dropdown-menu">
                     <li><a href="">Créer un salon</a></li>
                     <li><a href="">Gérer mes salons</a></li>
@@ -28,7 +26,7 @@
         <!-- Barre de recherche rapide -->
         <div>
             <form class="navbar-form navbar-right">
-                <input class="form-control" placeholder="Search" type="text">
+                <input style="margin-right:25px" class="form-control" placeholder="Rechercher" type="text">
             </form>
         </div>
     </div>

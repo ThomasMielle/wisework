@@ -7,6 +7,11 @@ namespace WiseWork.Content.Ressources
 {
     public class RessourcesSimon
     {
+        static RessourcesSimon()
+        {
+            initData();
+        }
+
         public static List<Utilisateur> listUtilisateur { get; set; }
         public static List<Salon> listSalon { get; set; }
         public static readonly string TAG_DRIVE = "Drive";
