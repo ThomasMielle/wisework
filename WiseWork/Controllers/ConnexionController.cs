@@ -55,7 +55,7 @@ namespace WiseWork.Controllers
         {
             foreach (Utilisateur user in RessourcesSimon.listUtilisateur)
             {
-                if (identifiant.password == user.Password)
+                if (identifiant.password == user.Password && identifiant.login == user.Login)
                     return user;
             }
 
