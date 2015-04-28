@@ -12,7 +12,7 @@ WiseWorkApp.factory('UserService', function ($http, LocalDatabase) {
                     //Stocker dans la base JS plus tard
                 })
                     .error(function () {
-                    LocalDatabase.CurrentUser = null;
+                        LocalDatabase.CurrentUser = null;
                     //Supprimer de la base JS 
                     });
             return LocalDatabase.CurrentUser;
