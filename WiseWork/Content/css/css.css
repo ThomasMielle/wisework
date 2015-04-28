@@ -166,7 +166,8 @@ body {
 
 /* filtres */
 .showFiltres, .filtres, .filtreDate {
-background-color:#82b1ff;
+    cursor:pointer;
+    background-color:#82b1ff;
 	position:absolute;
 	text-align: center;
 	top:-20px;
