@@ -1,3 +1,5 @@
-﻿<div id="main-searchbar" style="position:absolute;bottom:0;left:16.66666%;right:0;padding:5px 10px;background-color:#EEE;border-top:1px solid #CCC;z-index:9999" ng-model="newMessage" ng-keyup="envoyerMessage($event)">
-    <input class="form-control floating-label" placeholder="use @ to tag, # for auto-complete" type="text">
+﻿<div id="main-searchbar">
+    <form ng-submit="envoyerMessage()">
+        <input class="form-control floating-label" placeholder="use @ to tag, # for auto-complete" type="text" ng-model="newMessage">
+    </form>
 </div>

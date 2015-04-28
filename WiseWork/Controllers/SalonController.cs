@@ -157,5 +157,57 @@ namespace WiseWork.Controllers
             //RessourcesSimon.initData();
             return RessourcesSimon.listSalon;
         }
+
+
+        [HttpPost]
+        public string createRdv(CalendarEvent MyEvent)
+        {
+
+            UserCredential credential = GoogleWebAuthorizationBroker.AuthorizeAsync(
+                new ClientSecrets
+                {
+                    ClientId = "516609696715-qfuj2ijh0e1rgetqvg96s9tsos2prtvo.apps.googleusercontent.com",
+                    ClientSecret = "aTwWpkDgt7Cu9wlIQQYZV_6i",
+                },
+                new[] { CalendarService.Scope.Calendar },
+                "user",
+                CancellationToken.None).Result;
+
+            // Create the service.
+            var service = new CalendarService(new BaseClientService.Initializer()
+            {
+                HttpClientInitializer = credential,
+                ApplicationName = "Calendar API Sample",
+            });
+
+
+            Event Event = new Event
+            {
+                Summary = "Mon premier rendez vous avec api",
+                Location = "Paris",
+                Start = new EventDateTime()
+                {
+                    DateTime = Convert.ToDateTime(MyEvent.DateDebut + " " + MyEvent.HeureDebut),
+                    TimeZone = "Europe/Paris"
+                },
+                End = new EventDateTime()
+                {
+                    DateTime = Convert.ToDateTime(MyEvent.DateDebut + " " + MyEvent.HeureFin),
+                    TimeZone = "Europe/Paris"
+                },
+                Recurrence = new String[] {
+                      "RRULE:FREQ=WEEKLY;BYDAY=MO"
+                },
+                Attendees = new List<EventAttendee>()
+                {
+                    new EventAttendee() { Email = "aobmilan@gmail.com" }
+                }
+            };
+
+            Event recurringEvent = service.Events.Insert(Event, "bah.founet@gmail.com").Execute();
+
+            return MyEvent.DateDebut;
+
+        }
     }
 }

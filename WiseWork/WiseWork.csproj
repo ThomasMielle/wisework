@@ -120,10 +120,7 @@
     <Content Include="Content\Vues\accueil.html" />
     <Content Include="Content\Vues\connexion.html" />
     <Content Include="Content\Vues\Elements\barreMenu.html" />
-    <Content Include="Content\Vues\Elements\mainSearchBar.html" />
     <Content Include="Content\Vues\Elements\voletMenu.html" />
-    <Content Include="Content\Vues\listSalons.html" />
-    <Content Include="Content\Vues\message.html" />
     <Content Include="Content\Vues\privateMsg.html" />
     <Content Include="Content\Vues\salon.html" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
