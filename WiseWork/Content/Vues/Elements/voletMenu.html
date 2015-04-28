@@ -4,20 +4,28 @@
     <div class="row">
         <div class="col-sm-3 col-md-2 sidebar">
            
-            <div>
-                <div class="title-top">
-                    <span class="head">Salons</span><br />
-                </div>
-                <a ng-repeat="salon in listSalon" href="#salons">{{salon.Nom}}</a>
+            <div class="title-top">
+                <span class="head">Salons</span>
+                <span href="" class="label label-info">manage</span>
             </div>
+            <div></div>
+            <ul class="nav nav-sidebar">
+                <li ng-repeat="salon in listSalon">
+                    <a href="#/salon/{{salon.Nom}}">{{salon.Nom}}</a>
+                </li>
+            </ul>
 
             <div>
                 <div class="title-top">
                     <span class="head">Contacts</span>
+                    <span href="" class="label label-info">manage</span>
                 </div>
-                <a ng-repeat="user in listUser" href="">{{user.Prenom}} {{user.Nom}}</a>
+                <div></div>
+                <ul class="nav nav-sidebar">
+                    <li ng-repeat="user in listUser">
+                        <a href="#/salon/{{user.Prenom}}{{user.Nom}}">{{user.Prenom}} {{user.Nom}}</a>
+                    </li>
+                </ul>
             </div>
 
         </div>
-    </div>
-</div>
