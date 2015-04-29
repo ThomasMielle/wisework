@@ -1,6 +1,6 @@
 ﻿
 //  Vérifie la combinaison "login" et "password"
-WiseWorkController.controller('ctrl_connexion', function ($scope, $rootScope, $http, UserService,$location) {
+WiseWorkController.controller('ctrl_connexion', function ($scope, $rootScope, $http, UserService, $location) {
 
     $scope.identifiant = {};
     $scope.identifiant.login = '';
@@ -17,8 +17,14 @@ WiseWorkController.controller('ctrl_connexion', function ($scope, $rootScope, $h
                     $rootScope.notificationConnexion = "Le couple Login/Password est incorrect";
                 }
             })
-            .then(function (response){
-                alert(response.data);
-            })
-        };
+    };
+});
+
+WiseWorkController.controller('ctrl_deconnexion', function ($scope, $rootScope, $http, $location, LocalDatabase) {
+    
+    LocalDatabase.notificationConnexion = null;
+    $rootScope.notificationConnexion = null;
+    LocalDatabase.CurrentUser = null;
+    $rootScope.CurrentUser = null;
+    $location.path("/");
 });

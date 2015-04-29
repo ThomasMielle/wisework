@@ -16,13 +16,20 @@ WiseWorkApp.config(['$routeProvider',
         }).
         when('/salon/:salonNom', {
             templateUrl: 'Vues/salon.html',
-            controller: 'salonController'
+            controller: 'ctrl_salon'
+        }).
+        when('/aide', {
+            templateUrl: 'Vues/aide.html'
+        }).
+        when('/deconnexion', {
+            templateUrl: 'Vues/connexion.html',
+            controller: 'ctrl_deconnexion'
         }).
         otherwise({
             redirectTo: '/'
         });
   }]);
-
+/*
 WiseWorkController.controller('salonController', ['$scope', '$http', '$routeParams',
     function ($scope, $http, $routeParams) {
         //initialisation affichage filtre
@@ -156,4 +163,4 @@ WiseWorkController.controller('salonController', ['$scope', '$http', '$routePara
 
     }
 ]);
-
+*/

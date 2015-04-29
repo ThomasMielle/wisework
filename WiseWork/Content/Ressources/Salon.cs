@@ -66,8 +66,8 @@ namespace WiseWork.Content.Ressources
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         public void ajouterMessage(Utilisateur auteur, string chaine)
         {
-            ajouterSeparateurJour(new DateTime());
-            listMessage.Add(new Message(idMessage++, auteur, chaine, new DateTime()));
+            ajouterSeparateurJour(DateTime.Now);
+            listMessage.Add(new Message(idMessage++, auteur, chaine, DateTime.Now));
         }
         public void ajouterMessage(Utilisateur auteur, string chaine, DateTime date)
         {

@@ -5,11 +5,13 @@
         <div class="col-sm-3 col-md-2 sidebar">
            
             <div class="title-top">
-                <span class="head">Salons</span>
-                <span href="" class="label label-info">manage</span>
+                <div style="color:black" class="separator">Salons</div>
+                <!-- Bouton manage en standby-->
+                <!--<span href="" class="label label-info">manage</span>-->
             </div>
             <div></div>
             <ul class="nav nav-sidebar">
+                <li>&nbsp;</li>
                 <li ng-repeat="salon in listSalon">
                     <a href="#/salon/{{salon.Nom}}">{{salon.Nom}}</a>
                 </li>
@@ -17,11 +19,13 @@
 
             <div>
                 <div class="title-top">
-                    <span class="head">Contacts</span>
-                    <span href="" class="label label-info">manage</span>
+                    <div style="color:black" class="separator">Contacts</div>
+                    <!-- Bouton manage en standby-->
+                    <!--<span href="" class="label label-info">manage</span>-->
                 </div>
                 <div></div>
                 <ul class="nav nav-sidebar">
+                    <li>&nbsp;</li>
                     <li ng-repeat="user in listUser">
                         <a href="#/salon/{{user.Prenom}}{{user.Nom}}">{{user.Prenom}} {{user.Nom}}</a>
                     </li>

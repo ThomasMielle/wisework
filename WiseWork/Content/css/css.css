@@ -138,14 +138,14 @@ body {
 	float:left;
 	content:"";
 	margin-top: 10px;
-	width:40%;
+	width:35%;
 	border-top:1px rgba(0,0,0,0.1) solid;
 }
 .separator::after {
 	float: right;
 	content: "";
 	margin-top: 10px;
-	width:40%;
+	width:35%;
 	border-top:1px rgba(0,0,0,0.1) solid;
 }
 .list-group-item .horodatage {
