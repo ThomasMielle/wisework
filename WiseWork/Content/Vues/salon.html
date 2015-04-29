@@ -53,7 +53,7 @@
                         <!-- si pas de tag-->
                         <!-- affichage du message -->
                         <div class="row-picture">
-                            <img class="circle" src="{{msg.Auteur.UrlImg}}" alt="{{ msg.Auteur.PSrenom }} {{msg.auteur.Nom}}">
+                            <img class="circle" src="{{msg.Auteur.UrlImg}}" alt="{{ msg.Auteur.Prenom }} {{msg.auteur.Nom}}">
                         </div>
                         <div class="row-content">
                             <h4 class="list-group-item-heading">{{msg.Auteur.Prenom}} {{msg.Auteur.Nom}}</h4>
@@ -90,5 +90,12 @@
         </div>  
     </div>
 </div>
-<div ng-include="'Vues/Elements/mainSearchBar.html'"></div>
+
+<!--<div ng-include="'Vues/Elements/mainSearchBar.html'"></div>-->
+<div id="main-searchbar" style="position:absolute;bottom:0;left:16.66666%;right:0;padding:10px;background-color:#EEE;border-top:1px solid #CCC;z-index:9999">
+
+    <form ng-submit="envoyerMessage()">
+        <input class="form-control floating-label" placeholder="Utilisez @ ou # pour activer l'auto-complétion'" type="text" ng-model="newMessage">
+    </form>
+</div>
 
