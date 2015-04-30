@@ -138,7 +138,7 @@ body {
 	float:left;
 	content:"";
 	margin-top: 10px;
-	width:35%;
+	width:30%;
 	border-top:1px rgba(0,0,0,0.1) solid;
 }
 .separator::after {
