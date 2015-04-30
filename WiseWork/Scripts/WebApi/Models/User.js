@@ -2,6 +2,8 @@
     return {
         Id: 0,
         Nom: '',
-        Prenom: ''
+        Prenom: '',
+        Login: '',
+        Password: ''
     };
 };

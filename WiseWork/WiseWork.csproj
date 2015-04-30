@@ -164,6 +164,7 @@
     <Content Include="Content\Vues\Elements\barreMenu.html" />
     <Content Include="Content\Vues\Elements\mainSearchBar.html" />
     <Content Include="Content\Vues\Elements\voletMenu.html" />
+    <Content Include="Content\Vues\modificationProfil.html" />
     <Content Include="Content\Vues\privateMsg.html" />
     <Content Include="Content\Vues\salon.html" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -962,6 +963,7 @@
     <Content Include="Scripts\WebApi\Controllers\ConnexionController.js" />
     <Content Include="Scripts\WebApi\Controllers\AccueilController.js" />
     <Content Include="Scripts\WebApi\Controllers\SalonController.js" />
+    <Content Include="Scripts\WebApi\Controllers\UserController.js" />
     <Content Include="Scripts\WebApi\Models\LocalDatabase.js" />
     <Content Include="Scripts\WebApi\Models\Message.js" />
     <Content Include="Scripts\WebApi\Models\Salon.js" />

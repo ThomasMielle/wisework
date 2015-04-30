@@ -25,6 +25,10 @@ WiseWorkApp.config(['$routeProvider',
             templateUrl: 'Vues/connexion.html',
             controller: 'ctrl_deconnexion'
         }).
+        when('/modificationProfil', {
+            templateUrl: 'Vues/modificationProfil.html',
+            controller: 'ctrl_modif_user'
+        }).
         otherwise({
             redirectTo: '/'
         });

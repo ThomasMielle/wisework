@@ -1,0 +1,42 @@
+﻿
+<div ng-include="'Vues/Elements/barreMenu.html'"></div>
+<div ng-include="'Vues/Elements/voletMenu.html'"></div>
+
+<div style="padding-left: 20%">
+
+    <h3>Modifier votre profil</h3>
+
+    <form id="modifUserForm" class="form-horizontal" role="form" ng-submit="modifierUser()">
+
+        <div style="margin-bottom: 25px; margin-right: 25px" class="input-group">
+            <span class="input-group-addon icon-connexion">Nom : </span>
+            <input id="user-nom" type="text" class="form-control" name="nom" value="" placeholder="{{CurrentUser.Nom}}" ng-model="identifiant.nom">
+        </div>
+
+        <div style="margin-bottom: 25px; margin-right: 25px" class="input-group">
+            <span class="input-group-addon icon-connexion">Prenom : </span>
+            <input id="user-prenom" type="text" class="form-control" name="prenom" value="" placeholder="{{CurrentUser.Prenom}}" ng-model="identifiant.prenom">
+        </div>
+
+        <div style="margin-bottom: 25px; margin-right: 25px" class="input-group">
+            <span class="input-group-addon icon-connexion">Login : </span>
+            <input id="user-username" type="text" class="form-control" name="username" value="" placeholder="{{CurrentUser.Login}}" ng-model="identifiant.login">
+        </div>
+
+        <div style="margin-bottom: 25px; margin-right: 25px" class="input-group">
+            <span class="input-group-addon icon-connexion">Password : </span>
+            <input id="user-password" type="password" class="form-control" name="password" placeholder="{{CurrentUser.Password}}" ng-model="identifiant.password">
+        </div>
+
+        <p style="float:left; margin:25px 0 25px 25px;">Notif : {{notificationModification}} </p>
+
+        <div style="margin-top:10px" class="form-group">
+            <!-- Button -->
+
+            <div class="col-sm-12 controls">
+                <input id="btn-login" style="float:right; margin:-55px 50px 10px 0;" class="btn btn-info" type="submit" value="Enregistré" />
+            </div>
+        </div>
+    </form>
+
+</div>
