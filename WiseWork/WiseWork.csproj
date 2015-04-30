@@ -166,6 +166,7 @@
     <Content Include="Content\Vues\Elements\voletMenu.html" />
     <Content Include="Content\Vues\modificationProfil.html" />
     <Content Include="Content\Vues\privateMsg.html" />
+    <Content Include="Content\Vues\probleme.html" />
     <Content Include="Content\Vues\salon.html" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -962,6 +963,7 @@
     <Content Include="Scripts\WebApi\app.js" />
     <Content Include="Scripts\WebApi\Controllers\ConnexionController.js" />
     <Content Include="Scripts\WebApi\Controllers\AccueilController.js" />
+    <Content Include="Scripts\WebApi\Controllers\ProblemeController.js" />
     <Content Include="Scripts\WebApi\Controllers\SalonController.js" />
     <Content Include="Scripts\WebApi\Controllers\UserController.js" />
     <Content Include="Scripts\WebApi\Models\LocalDatabase.js" />

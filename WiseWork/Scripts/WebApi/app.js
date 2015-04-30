@@ -29,6 +29,10 @@ WiseWorkApp.config(['$routeProvider',
             templateUrl: 'Vues/modificationProfil.html',
             controller: 'ctrl_modif_user'
         }).
+        when('/probleme', {
+            templateUrl: 'Vues/probleme.html',
+            controller: 'ctrl_probleme'
+        }).
         otherwise({
             redirectTo: '/'
         });
