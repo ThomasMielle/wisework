@@ -68,6 +68,14 @@
                             <p class="list-group-item-text centerV"><strong>{{msg.Auteur.Prenom}} {{msg.Auteur.Nom}}</strong> a ajouté <a href="download/design_appli.png"><span class="fichier">{{msg.Chaine}}</span></a></p>
                         </div>
                     </div>
+                    <div ng-switch-when="Rdv">
+                        <div class="row-picture">
+                            <img class="circle" src="img/corps_page/calendar.png" alt="Drive">
+                        </div>
+                        <div class="row-content">
+                            <p class="list-group-item-text centerV">{{msg.Chaine}}</p>
+                        </div>
+                    </div>
                     <div ng-switch-when="JourSeparateur">
                         <div class="separator">{{msg.Chaine}}</div>
                     </div>

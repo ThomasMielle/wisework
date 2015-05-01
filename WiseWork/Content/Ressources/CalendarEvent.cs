@@ -8,18 +8,46 @@ namespace WiseWork.Content.Ressources
 {
     public class CalendarEvent
     {
+        private string dateDebut, heureDebut, heureFin, titreRdv;
+        private string userEmail;
+        private List<Utilisateur> invites;
+        public string DateDebut
+        { 
+            get {return dateDebut;}
+            set { dateDebut = value; }
+        }
 
-        public string DateDebut { get; set; }
+        public string HeureDebut 
+        {
+            get { return heureDebut; }
+            set { heureDebut = value; } 
+        }
 
-        public string HeureDebut { get; set; }
+        public string HeureFin 
+        {
+            get { return heureFin; }
+            set { heureFin = value; }
+        }
 
-        public string HeureFin { get; set; }
+        public List<Utilisateur> Invites 
+        {
+            get { return invites; }
+        }
 
-        public string TitreRdv { get; set; }
+        public string TitreRdv 
+        {
+            get { return titreRdv; }
+            set { titreRdv = value; }
+        
+        }
 
-        public Utilisateur User { get; set; }
-
-        private List<Utilisateur> Invites { get; set; }
+        public string UserEmail
+        {
+            get { return userEmail; }
+            set { userEmail = value; }
+        }
+   
+    
 
         
 

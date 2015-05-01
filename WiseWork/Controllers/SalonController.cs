@@ -153,7 +153,7 @@ namespace WiseWork.Controllers
                     break;
                 }
 
-            s.ajouterMessage(u, nm.message);
+            s.ajouterMessage(u, nm.message,DateTime.Now,nm.Tag);
 
             return s.ListMessage;
         }
@@ -184,13 +184,13 @@ namespace WiseWork.Controllers
             var service = new CalendarService(new BaseClientService.Initializer()
             {
                 HttpClientInitializer = credential,
-                ApplicationName = "Calendar API Sample",
+                ApplicationName = "Calendar API",
             });
 
 
             Event Event = new Event
             {
-                Summary = "Mon premier rendez vous avec api",
+                Summary = MyEvent.TitreRdv,
                 Location = "Paris",
                 Start = new EventDateTime()
                 {
@@ -201,17 +201,15 @@ namespace WiseWork.Controllers
                 {
                     DateTime = Convert.ToDateTime(MyEvent.DateDebut + " " + MyEvent.HeureFin),
                     TimeZone = "Europe/Paris"
-                },
-                Recurrence = new String[] {
-                      "RRULE:FREQ=WEEKLY;BYDAY=MO"
-                },
-                Attendees = new List<EventAttendee>()
-                {
-                    new EventAttendee() { Email = "aobmilan@gmail.com" }
                 }
             };
+            List<EventAttendee> Attendees = new List<EventAttendee>();
+            foreach(Utilisateur User in RessourcesSimon.listUtilisateur){
+                Attendees.Add(new EventAttendee() { Email = User.EmailGoogle});
+            }
+            Event.Attendees = Attendees;
 
-            Event recurringEvent = service.Events.Insert(Event, "bah.founet@gmail.com").Execute();
+            Event recurringEvent = service.Events.Insert(Event, MyEvent.UserEmail).Execute();
 
             return MyEvent.DateDebut;
 

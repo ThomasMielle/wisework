@@ -47,8 +47,9 @@ WiseWorkApp.factory('SalonService', function ($http, LocalDatabase) {
                 })
             return LocalDatabase.listMessage;
         },
-        envoiMessage: function (nomSalon, message) {
-            datas = { nomSalon: nomSalon, idUtilisateur: LocalDatabase.CurrentUser.Id, message: message }
+        envoiMessage: function (nomSalon, message, tag) {
+           
+            datas = { nomSalon: nomSalon, idUtilisateur: LocalDatabase.CurrentUser.Id, message: message,tag:tag }
             return $http.post("/api/Salon/ajouterMessage", datas)
                 .success(function (data) {
                     LocalDatabase.listMessage = data.ListMessage;

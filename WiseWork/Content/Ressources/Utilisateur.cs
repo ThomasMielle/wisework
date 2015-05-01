@@ -13,7 +13,7 @@ namespace WiseWork.Content.Ressources
         ////////////////////////////////////////////////////////////////////////////////////////////////////
 
         private int id;
-        private string nom, prenom, login, password, urlImg;
+        private string nom, prenom, login, password, urlImg,emailGoogle;
         private List<Utilisateur> listFollower;
         
         ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -27,7 +27,6 @@ namespace WiseWork.Content.Ressources
             this.prenom = prenom;
             this.login = login;
             this.password = password;
-
             this.listFollower = new List<Utilisateur>();
         }
         public Utilisateur(int id, string nom, string prenom, string login, string password, string urlImg)
@@ -39,6 +38,17 @@ namespace WiseWork.Content.Ressources
             this.password = password;
             this.urlImg = urlImg;
 
+            this.listFollower = new List<Utilisateur>();
+        }
+        public Utilisateur(int id, string nom, string prenom, string login, string password,string urlImg, string emailGoogle)
+        {
+            this.id = id;
+            this.nom = nom;
+            this.prenom = prenom;
+            this.login = login;
+            this.password = password;
+            this.urlImg = urlImg;
+            this.emailGoogle = emailGoogle;
             this.listFollower = new List<Utilisateur>();
         }
         ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -82,6 +92,11 @@ namespace WiseWork.Content.Ressources
             get { return id; }
         }
 
+        public string EmailGoogle
+        {
+            get { return emailGoogle; }
+            set { emailGoogle = value; }
+        }
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         //  Methodes
         ////////////////////////////////////////////////////////////////////////////////////////////////////

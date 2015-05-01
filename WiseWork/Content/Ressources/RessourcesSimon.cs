@@ -23,11 +23,11 @@ namespace WiseWork.Content.Ressources
             listUtilisateur = new List<Utilisateur>();
             listSalon = new List<Salon>();
 
-            listUtilisateur.Add(new Utilisateur(1, "Random", "Person", "prandom", "pass", "img/profilLogo.jpg"));
-            listUtilisateur.Add(new Utilisateur(2, "Croft", "Lara", "lcroft", "pass", "img/photo_profil/profil9.jpg"));
-            listUtilisateur.Add(new Utilisateur(3, "Man", "Bat", "bman", "pass", "img/photo_profil/profil5.jpg"));
-            listUtilisateur.Add(new Utilisateur(4, "Le Gris", "Gandalf", "glegris", "pass", "img/photo_profil/profil1.jpg"));
-            listUtilisateur.Add(new Utilisateur(5, "Monkey D.", "Luffy", "lmonkeyd", "pass", "img/photo_profil/profil3.jpg"));
+            listUtilisateur.Add(new Utilisateur(1, "Random", "Person", "prandom", "pass", "img/profilLogo.jpg","bah.founet@gmail.com"));
+            listUtilisateur.Add(new Utilisateur(2, "Croft", "Lara", "lcroft", "pass", "img/photo_profil/profil9.jpg","aobmilan@gmail.com"));
+            listUtilisateur.Add(new Utilisateur(3, "Man", "Bat", "bman", "pass", "img/photo_profil/profil5.jpg","aobmilan@yahoo.fr"));
+            listUtilisateur.Add(new Utilisateur(4, "Le Gris", "Gandalf", "glegris", "pass", "img/photo_profil/profil1.jpg","aobmilan@gmail.com"));
+            listUtilisateur.Add(new Utilisateur(5, "Monkey D.", "Luffy", "lmonkeyd", "pass", "img/photo_profil/profil3.jpg","amadou.bah.pro@gmail.com"));
 
             listSalon.Add(new Salon(1, "Design"));
             listSalon.Add(new Salon(2, "Jeux video"));
