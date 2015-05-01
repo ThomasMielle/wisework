@@ -4,22 +4,25 @@
 
 <div style="padding-left: 20%">
 
-    <h3>Signaler un problème</h3>
+    <h1>Signaler un problème</h1>
+    <p>Si vous rencontrez des difficultés, n'hésitez pas à nous en faire part...</p><br />
 
     <form id="modifUserForm" class="form-horizontal" role="form" ng-submit="ajouterProbleme()">
 
         <div style="margin-bottom: 25px; margin-right: 25px" class="input-group">
-            <span>Problème en cours de traitement : </span><br /><br />
+            <span>Problème(s) en cours de traitement : </span><br /><br />
                 <span ng-repeat="probleme in listProbleme">
                     -> {{probleme}}<br />
                 </span><br />
             <textarea id="user-probleme" type="text" name="decription" value="" placeholder="Description" ng-model="description" style="width: 600px; height: 200px;" />
         </div>
 
+        <p style="float:left; margin:0 0 25px 25px; width:50%">Notif : {{notificationModification}} </p>
+
         <div style="margin-top:10px" class="form-group">
             <!-- Button -->
-            <div class="col-sm-12 controls">
-                <input id="btn-login" style="float:right; margin:-55px 50px 10px 0;" class="btn btn-info" type="submit" value="Enregistré" />
+            <div class="col-sm-6 controls">
+                <input id="btn-login" style="float:right; margin:-55px 50px 10px 0;" class="btn btn-info" type="submit" value="Enregistrer" />
             </div>
         </div>
     </form>

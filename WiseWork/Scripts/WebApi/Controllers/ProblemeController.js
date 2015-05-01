@@ -2,8 +2,10 @@
 WiseWorkController.controller('ctrl_probleme', function ($scope, $rootScope, $http) {
 
     $scope.listProbleme = [
-    "Les messages ne s'affiche pas.",
-    "Impossible de voir les salons."
+    "Les modifications du profil déconnectent l'utilisateur",
+    "Les salons entre utilisateurs ne fonctionnent pas",
+    "Le partage Google Drive n'est pas implémenté",
+    "On ne peut enregistrer qu'un problème ?"
     ];
 
     //$scope.listProbleme = new Array("Les messages ne s'affiche pas.", "Impossible de voir les salons");
