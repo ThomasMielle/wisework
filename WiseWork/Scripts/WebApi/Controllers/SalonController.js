@@ -95,6 +95,7 @@ WiseWorkController.controller('ctrl_salon', ['$scope','$rootScope','$routeParams
                               $scope.ListMessage = response.data;
                               $scope.newMessage = "";
                           });
+                        HubService.chat.server.notifyMessage(response.data.ListMessage);
                     })
                     .error(function (data) {
                         alert("Erreur : Le rdv n'a pas été crée ");
@@ -114,7 +115,7 @@ WiseWorkController.controller('ctrl_salon', ['$scope','$rootScope','$routeParams
                    HubService.chat.server.notifyMessage(response.data.ListMessage);
                });
             }
-
+            
         }
     };
     SalonService.initialisationSalon($routeParams.salonNom)
@@ -146,6 +147,7 @@ WiseWorkController.controller('ctrl_salon', ['$scope','$rootScope','$routeParams
                     .then(function (response) {
                         $scope.ListMessage = response.data;
                         $scope.newMessage = "";
+                        HubService.chat.server.notifyMessage(response.data.ListMessage);
                     });
                 }
             });
