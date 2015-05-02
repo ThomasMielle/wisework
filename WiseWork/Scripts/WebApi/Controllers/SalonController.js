@@ -1,5 +1,12 @@
 ﻿//  Controller gérant l'affichage et la mise a jour d'un salon
-WiseWorkController.controller('ctrl_salon', function ($scope, $rootScope, $routeParams, $http, SalonService, LocalDatabase) {
+WiseWorkController.controller('ctrl_salon', ['$scope','$rootScope','$routeParams', '$http', 'SalonService', 'LocalDatabase', 'HubService', '$route',
+    function ($scope, $rootScope, $routeParams, $http, SalonService, LocalDatabase, HubService, $route) {
+
+    HubService.chat.client.onMessageSend["ctrl_salon"] = function (msg) {
+        $scope.ListMessage = msg;
+        $route.reload();
+    };
+
     //initialisation affichage filtre
 
     // fonction pour changer l'importance d'un message
@@ -104,6 +111,7 @@ WiseWorkController.controller('ctrl_salon', function ($scope, $rootScope, $route
                .then(function (response) {
                    $scope.ListMessage = response.data;
                    $scope.newMessage = "";
+                   HubService.chat.server.notifyMessage(response.data.ListMessage);
                });
             }
 
@@ -142,4 +150,4 @@ WiseWorkController.controller('ctrl_salon', function ($scope, $rootScope, $route
                 }
             });
         });
-});
+}]);

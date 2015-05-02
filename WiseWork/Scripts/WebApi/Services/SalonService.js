@@ -1,5 +1,5 @@
 ﻿
-WiseWorkApp.factory('SalonService', function ($http, LocalDatabase) {
+WiseWorkApp.factory('SalonService', [ '$http', 'LocalDatabase', function ($http, LocalDatabase) {
 
     var factory = {
         getAllSalon: function () {
@@ -53,7 +53,10 @@ WiseWorkApp.factory('SalonService', function ($http, LocalDatabase) {
             return $http.post("/api/Salon/ajouterMessage", datas)
                 .success(function (data) {
                     LocalDatabase.listMessage = data.ListMessage;
-                });
+                })
+            .error(function () {
+                alert("Message non transmis");
+            });
             return LocalDatabase.listMessage;
         },
         /*envoiFichier: function (nomSalon, message, url, tag) {
@@ -74,4 +77,4 @@ WiseWorkApp.factory('SalonService', function ($http, LocalDatabase) {
         }
     };
     return factory;
-});
+}]);
