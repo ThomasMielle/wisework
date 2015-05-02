@@ -10,6 +10,7 @@ namespace WiseWork.Content.Ressources
         public string nomSalon { get; set; }
         public int idUtilisateur { get; set; }
         public string message { get; set; }
-        public string Tag { get; set; }
+        public string url { get; set; }
+        public string tag { get; set; }
     }
 }

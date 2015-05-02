@@ -46,6 +46,7 @@
     
     <div class="list-group" id="main-container" style="margin-top:10px">
         <h1 style="text-align:center">{{nomSalon}}</h1>
+        <input type="hidden" value="{{nomSalon}}" id="salon" />
         <div ng-repeat="msg in ListMessage | filter:query">
             <div class="list-group-item">
                 <div ng-switch on="msg.Tag">
@@ -53,7 +54,7 @@
                         <!-- si pas de tag-->
                         <!-- affichage du message -->
                         <div class="row-picture">
-                            <img class="circle" src="{{msg.Auteur.UrlImg}}" alt="{{ msg.Auteur.Prenom }} {{msg.auteur.Nom}}">
+                            <img class="circle" src="{{msg.Auteur.UrlImg}}" alt="{{msg.Auteur.Prenom}} {{msg.auteur.Nom}}">
                         </div>
                         <div class="row-content">
                             <h4 class="list-group-item-heading">{{msg.Auteur.Prenom}} {{msg.Auteur.Nom}}</h4>
@@ -65,7 +66,7 @@
                             <img class="circle" src="img/corps_page/logo_drive.png" alt="Drive">
                         </div>
                         <div class="row-content">
-                            <p class="list-group-item-text centerV"><strong>{{msg.Auteur.Prenom}} {{msg.Auteur.Nom}}</strong> a ajouté <a href="download/design_appli.png"><span class="fichier">{{msg.Chaine}}</span></a></p>
+                            <p class="list-group-item-text centerV"><strong>{{msg.Auteur.Prenom}} {{msg.Auteur.Nom}}</strong> a ajouté <a href="{{msg.UrlFichier}}"><span class="fichier">{{msg.Chaine}}</span></a></p>
                         </div>
                     </div>
                     <div ng-switch-when="Rdv">
@@ -103,6 +104,7 @@
     <form ng-submit="envoyerMessage()">
         <input class="form-control floating-label" placeholder="Entrez votre message ici. Utilisez /rdv et /drive pour activer des fonctionnalités complémentaires" type="text" ng-model="newMessage">
     </form>
+    <input type="hidden" id="pick">
 </div>
 
 

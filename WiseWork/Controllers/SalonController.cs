@@ -152,9 +152,15 @@ namespace WiseWork.Controllers
                     u = user;
                     break;
                 }
-
-            s.ajouterMessage(u, nm.message,DateTime.Now,nm.Tag);
-
+            if (nm.tag == "Drive")
+            {
+                string [] split = nm.message.Split(new Char [] {'*'});
+                s.ajouterMessage(u, split[0], split[1], DateTime.Now, nm.tag);
+            }
+            else
+            {
+                s.ajouterMessage(u, nm.message, DateTime.Now, nm.tag);
+            }
             return s.ListMessage;
         }
 

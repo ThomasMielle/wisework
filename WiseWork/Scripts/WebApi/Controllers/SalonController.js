@@ -50,7 +50,7 @@ WiseWorkController.controller('ctrl_salon', function ($scope, $rootScope, $route
     }
 
 
-    // envoi message
+    //envoi message
     //$scope.newMessage = "/rdv 12/05/2015 14:05 15:00 'Salon' ";
     var CreateRdvPath = "/api/Salon/createRdv";
     $scope.envoyerMessage = function () {
@@ -58,6 +58,8 @@ WiseWorkController.controller('ctrl_salon', function ($scope, $rootScope, $route
 
             var patternRdv = new RegExp("/rdv");
             var patterDrive = new RegExp("/drive");
+
+            //si c'est un /rdv
             if (patternRdv.test($scope.newMessage)) {
                
                 var str = $scope.newMessage.split("/rdv");
@@ -91,13 +93,14 @@ WiseWorkController.controller('ctrl_salon', function ($scope, $rootScope, $route
                         alert("Erreur : Le rdv n'a pas été crée ");
                     });
 
+            //si c'est un /drive
             } else if (patterDrive.test($scope.newMessage)) {
+                document.getElementById('pick').click();
 
-                //Mettre ici le code pour le Drive
-
+            //sinon envoi du message
             } else {
                 var tag = "";
-                SalonService.envoiMessage($scope.nomSalon, $scope.newMessage)
+                SalonService.envoiMessage($scope.nomSalon, $scope.newMessage, tag)
                .then(function (response) {
                    $scope.ListMessage = response.data;
                    $scope.newMessage = "";
@@ -121,5 +124,22 @@ WiseWorkController.controller('ctrl_salon', function ($scope, $rootScope, $route
             $scope.absoluteDateMax = new Date();
             $scope.dateMax = new Date();
 
+            //initialisation du file picker
+            var picker = new FilePicker({
+                apiKey: 'AIzaSyAkTKEYBfDoIZhN03bowGpzSp--aQXXnAU',
+                clientId: '782474847602-krnlhk688n4kgmoaufhuh9a44njmbjh1',
+                buttonEl: document.getElementById("pick"),
+                onSelect: function (file) {
+                    //console.log(file);
+                    //alert("Selected : " + file.title + " : " + file.downloadUrl);
+                    var res = file.downloadUrl.split("&");
+                    //alert(file.title + "*" + res[0]);
+                    SalonService.envoiMessage($scope.nomSalon, file.title + "*" + res[0], "Drive")
+                    .then(function (response) {
+                        $scope.ListMessage = response.data;
+                        $scope.newMessage = "";
+                    });
+                }
+            });
         });
 });

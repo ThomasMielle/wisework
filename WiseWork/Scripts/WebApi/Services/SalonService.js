@@ -56,6 +56,15 @@ WiseWorkApp.factory('SalonService', function ($http, LocalDatabase) {
                 });
             return LocalDatabase.listMessage;
         },
+        /*envoiFichier: function (nomSalon, message, url, tag) {
+
+            datas = { nomSalon: nomSalon, idUtilisateur: LocalDatabase.CurrentUser.Id, message: message, url: url, tag: tag }
+            return $http.post("/api/Salon/ajouterMessage", datas)
+                .success(function (data) {
+                    LocalDatabase.listMessage = data.ListMessage;
+                });
+            return LocalDatabase.listMessage;
+        },*/
         initialisationSalon: function (nomSalon) {
             return $http.post("/api/Salon/getSalon", '"' + nomSalon + '"')
                 .success(function (data) {

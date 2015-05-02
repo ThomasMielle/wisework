@@ -17,18 +17,30 @@ namespace WiseWork.Content.Ressources
         private DateTime date;
         private Boolean important;
         private string tag;
-        
+        private string urlFichier;
+
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         //  Constructeurs
         ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        // pour un message avec un tag : rdv / drive
+        // pour un message avec un tag : / drive
+        public Message(int id, Utilisateur auteur, string chaine, string url, DateTime date, string tag)
+        {
+            this.id = id;
+            this.auteur = auteur;
+            this.chaine = chaine;
+            this.urlFichier = url;
+            this.date = date;
+            this.tag = tag;
+            this.important = true;
+        }
+        // pour un message avec un tag : / rdv
         public Message(int id, Utilisateur auteur, string chaine, DateTime date, string tag)
         {
             this.id = id;
             this.auteur = auteur;
             this.chaine = chaine;
-            //this.urlFichier = null;
+            //this.urlFichier = url;
             this.date = date;
             this.tag = tag;
             this.important = true;
@@ -40,7 +52,6 @@ namespace WiseWork.Content.Ressources
             this.id = id;
             this.auteur = auteur;
             this.chaine = chaine;
-            //this.urlFichier = null;
             this.date = date;
             this.tag = "";
             this.important = false;
@@ -72,6 +83,11 @@ namespace WiseWork.Content.Ressources
         {
             get { return chaine; }
             set { chaine = value; }
+        }
+        public string UrlFichier
+        {
+            get { return urlFichier; }
+            set { urlFichier = value; }
         }
         public string Tag
         {
