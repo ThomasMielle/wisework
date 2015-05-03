@@ -215,7 +215,7 @@ namespace WiseWork.Controllers
             }
             Event.Attendees = Attendees;
                   
-            Event recurringEvent = service.Events.Insert(Event,"primary").Execute();
+            Event recurringEvent = service.Events.Insert(Event,MyEvent.UserEmail).Execute();
 
             return MyEvent.DateDebut;
 
