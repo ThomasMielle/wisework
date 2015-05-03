@@ -214,8 +214,8 @@ namespace WiseWork.Controllers
                 Attendees.Add(new EventAttendee() { Email = User.EmailGoogle});
             }
             Event.Attendees = Attendees;
-
-            Event recurringEvent = service.Events.Insert(Event, MyEvent.UserEmail).Execute();
+                  
+            Event recurringEvent = service.Events.Insert(Event,MyEvent.UserEmail).Execute();
 
             return MyEvent.DateDebut;
 

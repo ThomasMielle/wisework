@@ -10,7 +10,7 @@ namespace WiseWork.Content.Ressources
     {
         private string dateDebut, heureDebut, heureFin, titreRdv;
         private string userEmail;
-        private List<Utilisateur> invites;
+        private List<Utilisateur>invites;
         public string DateDebut
         { 
             get {return dateDebut;}
@@ -46,10 +46,7 @@ namespace WiseWork.Content.Ressources
             get { return userEmail; }
             set { userEmail = value; }
         }
-   
-    
 
-        
 
     }
 }

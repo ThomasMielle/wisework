@@ -62,7 +62,7 @@ WiseWorkController.controller('ctrl_salon', ['$scope','$rootScope','$routeParams
     var CreateRdvPath = "/api/Salon/createRdv";
     $scope.envoyerMessage = function () {
         if ($scope.newMessage != "") {
-
+           
             var patternRdv = new RegExp("/rdv");
             var patterDrive = new RegExp("/drive");
 
@@ -75,7 +75,7 @@ WiseWorkController.controller('ctrl_salon', ['$scope','$rootScope','$routeParams
                 var dateDebut = eventParams[1];
                 var heureDebut = eventParams[2];
                 var heureFin = eventParams[3];
-                var titreRdv = eventParams[4];
+                var titreRdv = $scope.newMessage.match(/'(.*)'/).pop();
                 var event = {
                     dateDebut: dateDebut,
                     heureDebut: heureDebut,
