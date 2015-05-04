@@ -53,14 +53,6 @@
                 </div>
                 <div ng-if="msg.Tag != 'JourSeparateur'">
                     <div class="horodatage">{{msg.Hour}}:{{msg.Minute}}</div>
-                    <div ng-if="msg.Important">
-                        <!-- si message est important-->
-                        <div ng-click="important(msg.Id)" class="important"><img class="circle" src="img/corps_page/logo_important.png"></div>
-                    </div>
-                    <div ng-if="!msg.Important">
-                        <!-- si message est pas important-->
-                        <div ng-click="important(msg.Id)" class="non-important"><img class="circle" src="img/corps_page/logo_important.png"></div>
-                    </div>
                 </div>
             </div>
         </div>
