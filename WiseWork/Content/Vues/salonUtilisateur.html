@@ -6,8 +6,10 @@
     <div class="showFiltres" ng-click="hideInfosFunction()">
         <h5>Afficher les informations personnelles</h5>
     </div>
-    <div class="filtres" ng-hide="hideInfos">
-        <input ng-model="query" id="searchSalon" placeholder="Rechercher" type="text">
+    <div class="filtres" ng-hide="hideInfos" style="height:auto;padding-right:20px">
+        <div class="col-md-4"><img class="circle infos_photo" src="{{proprio.UrlImg}}" /><br /><span class="infos_nom">{{proprio.getId.Nom}}</span></div>
+        <div class="col-md-4" style="padding-top:15px"><span class="infos_poste">{{proprio.Poste}}</span><br />{{proprio.Batiment}}<br />{{proprio.Bureau}}<br />{{proprio.Telephone}}</div>
+        <div class="col-md-4" style="padding-top:30px">{{proprio.Description}}</div>
     </div>
     <div class="list-group" id="main-container-salonUtilisateur" style="margin-top:10px">
         <h1 style="text-align:center">{{nomSalon}}</h1>

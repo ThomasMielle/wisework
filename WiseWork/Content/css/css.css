@@ -207,6 +207,12 @@ body {
 	border-right: none;
 	border-bottom: 1px rgba(0,0,0,0.84) solid;
 }
+
+/* Information Propriétaire salon */
+.infos_nom {font-size:1.3em}
+.infos_poste {font-size:1.2em}
+.infos_photo {max-height:100px}
+
 /* important */
 .important {
 	position: absolute;

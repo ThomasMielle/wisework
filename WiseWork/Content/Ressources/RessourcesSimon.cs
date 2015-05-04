@@ -26,11 +26,11 @@ namespace WiseWork.Content.Ressources
             listSalonUtilisateur = new List<SalonUtilisateur>();
             listSalon = new List<Salon>();
 
-            listUtilisateur.Add(new Utilisateur(1, "Random", "Person", "prandom", "pass", "img/profilLogo.jpg"));
-            listUtilisateur.Add(new Utilisateur(2, "Croft", "Lara", "lcroft", "pass", "img/photo_profil/profil9.jpg"));
-            listUtilisateur.Add(new Utilisateur(3, "Man", "Bat", "bman", "pass", "img/photo_profil/profil5.jpg"));
-            listUtilisateur.Add(new Utilisateur(4, "Le Gris", "Gandalf", "glegris", "pass", "img/photo_profil/profil1.jpg"));
-            listUtilisateur.Add(new Utilisateur(5, "Monkey D.", "Luffy", "lmonkeyd", "pass", "img/photo_profil/profil3.jpg"));
+            listUtilisateur.Add(new Utilisateur(1, "Random", "Person", "prandom", "pass", "img/profilLogo.jpg", "bah.founet@gmail.com", "Infographiste", "B1-12", "batiment blériot", "01 30 52 48 64", "J'aime le café"));
+            listUtilisateur.Add(new Utilisateur(2, "Croft", "Lara", "lcroft", "pass", "img/photo_profil/profil9.jpg", "bah.founet@gmail.com", "Archeologue", "B1-12", "batiment blériot", "01 30 52 53 63", "Mon père il s'est fait tuer, je vais trouver les méchants"));
+            listUtilisateur.Add(new Utilisateur(3, "Man", "Bat", "bman", "pass", "img/photo_profil/profil5.jpg", "bah.founet@gmail.com", "Billionaire playboy", "B1-12", "batiment blériot", "01 30 40 48 63", "Je ne suis pas en couple avec robin !"));
+            listUtilisateur.Add(new Utilisateur(4, "Le Gris", "Gandalf", "glegris", "pass", "img/photo_profil/profil1.jpg", "bah.founet@gmail.com", "Magicien", "B1-12", "batiment blériot", "01 30 26 48 63", "Je fume la pipe"));
+            listUtilisateur.Add(new Utilisateur(5, "Monkey D.", "Luffy", "lmonkeyd", "pass", "img/photo_profil/profil3.jpg", "bah.founet@gmail.com", "Imbécile Elastique", "B1-12", "batiment blériot", "01 30 52 48 63", "Je veux trouver le One Piece !"));
 
             listSalonUtilisateur.Add(new SalonUtilisateur(1, listUtilisateur.ElementAt(0).getId.Nom));
             listSalonUtilisateur.Add(new SalonUtilisateur(2, listUtilisateur.ElementAt(1).getId.Nom));

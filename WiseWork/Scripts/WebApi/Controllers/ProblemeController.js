@@ -1,6 +1,6 @@
 ﻿
 WiseWorkController.controller('ctrl_probleme', function ($scope, $rootScope, $http) {
-
+    $scope.description = "";
     $scope.listProbleme = [
     "Les modifications du profil déconnectent l'utilisateur",
     "Les salons entre utilisateurs ne fonctionnent pas",
@@ -11,6 +11,9 @@ WiseWorkController.controller('ctrl_probleme', function ($scope, $rootScope, $ht
     //$scope.listProbleme = new Array("Les messages ne s'affiche pas.", "Impossible de voir les salons");
 
     $scope.ajouterProbleme = function () {
-        $scope.listProbleme[$scope.listProbleme.length] = $scope.description;
+        if ($scope.description != "") {
+            $scope.listProbleme[$scope.listProbleme.length] = $scope.description;
+            $scope.desrciption = "";
+        }
     }
 });

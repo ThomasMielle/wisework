@@ -69,6 +69,5 @@ WiseWorkController.controller('ctrl_salonUtilisateur', function ($scope, $rootSc
         .then(function (response) {
             $scope.proprio = response.data;
             $scope.nomSalon = response.data.Prenom + " " + response.data.Nom;
-            var a = 1;
         });
 });

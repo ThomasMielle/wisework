@@ -13,7 +13,7 @@ namespace WiseWork.Content.Ressources
         ////////////////////////////////////////////////////////////////////////////////////////////////////
 
         private int id;
-        private string nom, prenom, login, password, urlImg,emailGoogle;
+        private string nom, prenom, login, password, urlImg,emailGoogle, poste, bureau, batiment, telephone, description;
         private List<Ids> listFollower;
         
         ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -27,9 +27,14 @@ namespace WiseWork.Content.Ressources
             this.prenom = prenom;
             this.login = login;
             this.password = password;
+            this.poste = "";
+            this.bureau = "";
+            this.batiment = "";
+            this.telephone = "";
+            this.description = "";
             this.listFollower = new List<Ids>();
         }
-        public Utilisateur(int id, string nom, string prenom, string login, string password, string urlImg)
+        public Utilisateur(int id, string nom, string prenom, string login, string password, string urlImg, string emailGoogle, string poste, string bureau, string batiment, string tel, string desc)
         {
             this.id = id;
             this.nom = nom;
@@ -37,6 +42,12 @@ namespace WiseWork.Content.Ressources
             this.login = login;
             this.password = password;
             this.urlImg = urlImg;
+            this.poste = poste;
+            this.bureau = bureau;
+            this.batiment = batiment;
+            this.telephone = tel;
+            this.description = desc;
+            this.emailGoogle = emailGoogle;
 
             this.listFollower = new List<Ids>();
         }
@@ -47,6 +58,11 @@ namespace WiseWork.Content.Ressources
             this.prenom = prenom;
             this.login = login;
             this.password = password;
+            this.poste = "";
+            this.bureau = "";
+            this.batiment = "";
+            this.telephone = "";
+            this.description = "";
             this.urlImg = urlImg;
             this.emailGoogle = emailGoogle;
             this.listFollower = new List<Ids>();
@@ -96,6 +112,36 @@ namespace WiseWork.Content.Ressources
         {
             get { return emailGoogle; }
             set { emailGoogle = value; }
+        }
+
+        public string Poste
+        {
+            get { return poste; }
+            set { poste = value; }
+        }
+
+        public string Bureau
+        {
+            get { return bureau; }
+            set { bureau = value; }
+        }
+
+        public string Batiment
+        {
+            get { return batiment; }
+            set { batiment = value; }
+        }
+
+        public string Telephone
+        {
+            get { return telephone; }
+            set { telephone = value; }
+        }
+
+        public string Description
+        {
+            get { return description; }
+            set { description = value; }
         }
 
         public Ids getId
