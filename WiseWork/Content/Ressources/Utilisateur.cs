@@ -14,7 +14,7 @@ namespace WiseWork.Content.Ressources
 
         private int id;
         private string nom, prenom, login, password, urlImg,emailGoogle;
-        private List<Utilisateur> listFollower;
+        private List<Ids> listFollower;
         
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         //  Constructeurs
@@ -27,7 +27,7 @@ namespace WiseWork.Content.Ressources
             this.prenom = prenom;
             this.login = login;
             this.password = password;
-            this.listFollower = new List<Utilisateur>();
+            this.listFollower = new List<Ids>();
         }
         public Utilisateur(int id, string nom, string prenom, string login, string password, string urlImg)
         {
@@ -38,7 +38,7 @@ namespace WiseWork.Content.Ressources
             this.password = password;
             this.urlImg = urlImg;
 
-            this.listFollower = new List<Utilisateur>();
+            this.listFollower = new List<Ids>();
         }
         public Utilisateur(int id, string nom, string prenom, string login, string password,string urlImg, string emailGoogle)
         {
@@ -49,7 +49,7 @@ namespace WiseWork.Content.Ressources
             this.password = password;
             this.urlImg = urlImg;
             this.emailGoogle = emailGoogle;
-            this.listFollower = new List<Utilisateur>();
+            this.listFollower = new List<Ids>();
         }
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         //  Initialise
@@ -96,6 +96,11 @@ namespace WiseWork.Content.Ressources
         {
             get { return emailGoogle; }
             set { emailGoogle = value; }
+        }
+
+        public Ids getId
+        {
+            get { return new Ids(id, prenom + " " + nom); }
         }
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         //  Methodes

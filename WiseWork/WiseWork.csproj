@@ -188,12 +188,12 @@
     <Content Include="Content\Vues\aide.html" />
     <Content Include="Content\Vues\connexion.html" />
     <Content Include="Content\Vues\Elements\barreMenu.html" />
-    <Content Include="Content\Vues\Elements\mainSearchBar.html" />
     <Content Include="Content\Vues\Elements\voletMenu.html" />
     <Content Include="Content\Vues\modificationProfil.html" />
     <Content Include="Content\Vues\privateMsg.html" />
     <Content Include="Content\Vues\probleme.html" />
     <Content Include="Content\Vues\salon.html" />
+    <Content Include="Content\Vues\salonUtilisateur.html" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Icon.png" />
@@ -994,6 +994,7 @@
     <Content Include="Scripts\WebApi\Controllers\AccueilController.js" />
     <Content Include="Scripts\WebApi\Controllers\ProblemeController.js" />
     <Content Include="Scripts\WebApi\Controllers\SalonController.js" />
+    <Content Include="Scripts\WebApi\Controllers\SalonUtilisateurController.js" />
     <Content Include="Scripts\WebApi\Controllers\UserController.js" />
     <Content Include="Scripts\WebApi\Models\LocalDatabase.js" />
     <Content Include="Scripts\WebApi\Models\Message.js" />
@@ -1001,6 +1002,7 @@
     <Content Include="Scripts\WebApi\Models\User.js" />
     <Content Include="Scripts\WebApi\Services\HubService.js" />
     <Content Include="Scripts\WebApi\Services\SalonService.js" />
+    <Content Include="Scripts\WebApi\Services\SalonUtilisateurService.js" />
     <Content Include="Scripts\WebApi\Services\UserService.js" />
     <Content Include="Web.config" />
     <Content Include="Scripts\AngularJS\jquery-1.9.1.min.map" />
@@ -1009,19 +1011,20 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Content\Ressources\CalendarEvent.cs" />
+    <Compile Include="Content\Ressources\ChatInfos.cs" />
+    <Compile Include="Content\Ressources\Ids.cs" />
+    <Compile Include="Content\Ressources\SalonUtilisateur.cs" />
+    <Compile Include="Controllers\SalonUtilisateurController.cs" />
     <Compile Include="Hubs\ChatHub.cs" />
     <Compile Include="Content\Ressources\DateTest.cs" />
     <Compile Include="Content\Ressources\Message.cs" />
     <Compile Include="Content\Ressources\NouveauMessage.cs" />
-    <Compile Include="Content\Ressources\Ressources.cs" />
     <Compile Include="Content\Ressources\RessourcesSimon.cs" />
     <Compile Include="Content\Ressources\Salon.cs" />
     <Compile Include="Content\Ressources\Utilisateur.cs" />
     <Compile Include="Content\Ressources\UtilisateurTest.cs" />
     <Compile Include="Controllers\ConnexionController.cs" />
     <Compile Include="Controllers\SalonController.cs" />
-    <Compile Include="Controllers\SalonsController.cs" />
-    <Compile Include="Controllers\StartController.cs" />
     <Compile Include="Controllers\UtilisateurController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

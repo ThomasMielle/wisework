@@ -14,7 +14,7 @@ namespace WiseWork.Content.Ressources
 
         private int id;
         private string nom;
-        private List<Utilisateur> listUtilisateur;
+        private List<Ids> listIdUtilisateur;
         private List<Message> listMessage;
         private int idMessage;
 
@@ -27,14 +27,14 @@ namespace WiseWork.Content.Ressources
             this.id = id;
             this.nom = nom;
 
-            this.listUtilisateur = new List<Utilisateur>();
+            this.listIdUtilisateur = new List<Ids>();
             this.listMessage = new List<Message>();
             this.idMessage = 0;
         }
 
-        public Salon(int id, string nom, List<Utilisateur> users, List<Message> listMessage)
+        public Salon(int id, string nom, List<Ids> users, List<Message> listMessage)
         {
-            this.id = id; this.nom = nom; this.listUtilisateur = users; this.listMessage = listMessage;
+            this.id = id; this.nom = nom; this.listIdUtilisateur = users; this.listMessage = listMessage;
             this.idMessage = 0;
         }
         ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -47,10 +47,10 @@ namespace WiseWork.Content.Ressources
         //  Proprietes
         ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        public List<Utilisateur> ListUtilisateur
+        public List<Ids> ListIdUtilisateur
         {
-            get { return listUtilisateur; }
-            set { listUtilisateur = value; }
+            get { return listIdUtilisateur; }
+            set { listIdUtilisateur = value; }
         }
 
         public List<Message> ListMessage
@@ -61,6 +61,10 @@ namespace WiseWork.Content.Ressources
         public string Nom { get { return nom; } set { nom = value; } }
         public int Id { get { return id; } set { id = value; } }
 
+        public Ids getId
+        {
+            get { return new Ids(id, nom); }
+        }
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         //  Methodes
         ////////////////////////////////////////////////////////////////////////////////////////////////////

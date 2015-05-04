@@ -13,7 +13,7 @@
             <ul class="nav nav-sidebar">
                 <li>&nbsp;</li>
                 <li ng-repeat="salon in listSalon">
-                    <a href="#/salon/{{salon.Nom}}">{{salon.Nom}}</a>
+                    <a href="#/salon/{{salon}}">{{salon}}</a>
                 </li>
             </ul>
 
@@ -27,7 +27,7 @@
                 <ul class="nav nav-sidebar">
                     <li>&nbsp;</li>
                     <li ng-repeat="user in listUser">
-                        <a href="#/salon/{{user.Prenom}}{{user.Nom}}">{{user.Prenom}} {{user.Nom}}</a>
+                        <a href="#/contact/{{user.Id}}">{{user.Prenom}} {{user.Nom}}</a>
                     </li>
                 </ul>
             </div>

@@ -1,0 +1,83 @@
+﻿
+<div ng-include="'Vues/Elements/barreMenu.html'"></div>
+<div ng-include="'Vues/Elements/voletMenu.html'"></div>
+
+<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main" style="position:relative">
+    <div class="showFiltres" ng-click="hideInfosFunction()">
+        <h5>Afficher les informations personnelles</h5>
+    </div>
+    <div class="filtres" ng-hide="hideInfos">
+        <input ng-model="query" id="searchSalon" placeholder="Rechercher" type="text">
+    </div>
+    <div class="list-group" id="main-container-salonUtilisateur" style="margin-top:10px">
+        <h1 style="text-align:center">{{nomSalon}}</h1>
+        <div ng-repeat="msg in ListMessage | filter:query">
+            <div class="list-group-item">
+                <div ng-switch on="msg.Tag">
+                    <div ng-switch-when="">
+                        <!-- si pas de tag-->
+                        <!-- affichage du message -->
+                        <div class="row-picture">
+                            <img class="circle" src="{{msg.Auteur.UrlImg}}" alt="{{msg.Auteur.Prenom}} {{msg.auteur.Nom}}">
+                        </div>
+                        <div class="row-content">
+                            <h4 class="list-group-item-heading">{{msg.Auteur.Prenom}} {{msg.Auteur.Nom}}</h4>
+                            <p class="list-group-item-text">{{msg.Chaine}}</p>
+                        </div>
+                    </div>
+                    <div ng-switch-when="Chat">
+                        <div class="row-picture">
+                            <img class="circle" src="{{msg.Auteur.UrlImg}}" alt="{{msg.Auteur.Prenom}} {{msg.auteur.Nom}}">
+                        </div>
+                        <div class="row-content">
+                            <h4 class="list-group-item-heading">{{msg.Auteur.Prenom}} {{msg.Auteur.Nom}}</h4>
+                            <p class="list-group-item-text">{{msg.Chaine}}</p>
+                        </div>
+                    </div>
+                    <div ng-switch-when="Drive">
+                        <div class="row-picture">
+                            <img class="circle" src="img/corps_page/logo_drive.png" alt="Drive">
+                        </div>
+                        <div class="row-content">
+                            <p class="list-group-item-text centerV"><strong>{{msg.Auteur.Prenom}} {{msg.Auteur.Nom}}</strong> a ajouté <a href="download/design_appli.png"><span class="fichier">{{msg.Chaine}}</span></a></p>
+                        </div>
+                    </div>
+                    <div ng-switch-when="JourSeparateur">
+                        <div class="separator">{{msg.Chaine}}</div>
+                    </div>
+                    <div ng-switch-default>
+                        <h1>PROBLEME</h1>
+                    </div>
+                </div>
+                <div ng-if="msg.Tag != 'JourSeparateur'">
+                    <div class="horodatage">{{msg.Hour}}:{{msg.Minute}}</div>
+                    <div ng-if="msg.Important">
+                        <!-- si message est important-->
+                        <div ng-click="important(msg.Id)" class="important"><img class="circle" src="img/corps_page/logo_important.png"></div>
+                    </div>
+                    <div ng-if="!msg.Important">
+                        <!-- si message est pas important-->
+                        <div ng-click="important(msg.Id)" class="non-important"><img class="circle" src="img/corps_page/logo_important.png"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div ng-if="!Chat">
+    <div id="changeVue" ng-click="getChat()">
+        Voir le chat avec cette personne
+    </div>
+</div>
+<div ng-if="Chat">
+    <div id="changeVue" ng-click="getSalon()">
+        Voir le mur de cette personne
+    </div>
+</div>
+<div id="main-searchbar" style="position:absolute;bottom:0;left:16.66666%;right:0;padding:10px;background-color:#EEE;border-top:1px solid #CCC;z-index:9999">
+    <form ng-submit="envoyerMessage()">
+        <input class="form-control floating-label" placeholder="Utilisez @ ou # pour activer l'auto-complétion" type="text" ng-model="newMessage">
+    </form>
+</div>
+
+

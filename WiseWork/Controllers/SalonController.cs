@@ -146,7 +146,7 @@ namespace WiseWork.Controllers
                     break;
                 }
             if (s == null) return null;
-            foreach (Utilisateur user in s.ListUtilisateur)
+            foreach (Utilisateur user in RessourcesSimon.listUtilisateur)
                 if (user.Id == nm.idUtilisateur)
                 {
                     u = user;
@@ -165,10 +165,12 @@ namespace WiseWork.Controllers
         }
 
         [HttpGet]
-        public List<Salon> getSalons()
+        public List<string> getSalons()
         {
-            //RessourcesSimon.initData();
-            return RessourcesSimon.listSalon;
+            var nomSalons = new List<String>();
+            foreach (Salon salon in RessourcesSimon.listSalon)
+                nomSalons.Add(salon.Nom);
+            return nomSalons;
         }
 
 
