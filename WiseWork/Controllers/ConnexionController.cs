@@ -18,21 +18,12 @@ namespace WiseWork.Controllers
         [HttpPost]
         public Utilisateur verifIdentifiant(UtilisateurTest identifiant)
         {
-            //Ressources.initialiseData();
-            //RessourcesSimon.initData();
 
             if (identifiant == null)
                 throw new ArgumentException("identifiant ne doit pas être null");
 
-            //if (!verifLogin(identifiant))
-              //  throw new ArgumentException("Identifiant incorrect");
-
             Utilisateur user = verifPassword(identifiant) ;
             
-            //if (User == null)
-              //  throw new ArgumentException("Le couple Login/Password est incorrect");
-
-            //TODO: Encapsuler l'accès au Ressources dans un Service
             return user;            
         }
 

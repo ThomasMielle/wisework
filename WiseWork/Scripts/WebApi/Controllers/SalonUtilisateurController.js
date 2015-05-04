@@ -3,6 +3,7 @@ WiseWorkController.controller('ctrl_salonUtilisateur', function ($scope, $rootSc
     //initialisation affichage filtre
     $scope.nomSalon = "";
     $scope.newMessage = "";
+    $scope.salonPerso = false;
 
     $scope.hideInfos = true;
     $scope.Chat = false;
@@ -68,6 +69,7 @@ WiseWorkController.controller('ctrl_salonUtilisateur', function ($scope, $rootSc
     SalonUtilisateurService.getInfos($routeParams.idSalon)
         .then(function (response) {
             $scope.proprio = response.data;
+            $scope.salonPerso = $rootScope.CurrentUser.Id == $routeParams.idSalon;
             $scope.nomSalon = response.data.Prenom + " " + response.data.Nom;
         });
 });

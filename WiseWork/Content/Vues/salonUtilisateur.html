@@ -66,14 +66,16 @@
         </div>
     </div>
 </div>
-<div ng-if="!Chat">
-    <div id="changeVue" ng-click="getChat()">
-        Voir le chat avec cette personne
+<div ng-if="!salonPerso">
+    <div ng-if="!Chat">
+        <div id="changeVue" ng-click="getChat()">
+            Voir le chat avec cette personne
+        </div>
     </div>
-</div>
-<div ng-if="Chat">
-    <div id="changeVue" ng-click="getSalon()">
-        Voir le mur de cette personne
+    <div ng-if="Chat">
+        <div id="changeVue" ng-click="getSalon()">
+            Voir le mur de cette personne
+        </div>
     </div>
 </div>
 
