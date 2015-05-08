@@ -121,7 +121,7 @@ WiseWorkController.controller('ctrl_salon', ['$scope','$rootScope','$routeParams
     SalonService.initialisationSalon($routeParams.salonNom)
         .then(function (response) {
             $scope.ListMessage = response.data.ListMessage;
-            $scope.nomSalon = $routeParams.salonNom;
+            $rootScope.nomSalon = $routeParams.salonNom;
             $scope.newMessage = "";
 
             $scope.hideFiltres = true;

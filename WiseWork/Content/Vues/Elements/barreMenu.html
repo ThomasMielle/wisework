@@ -3,7 +3,15 @@
 <div class="navbar navbar-material-blue-A200 navbar-fixed-top">
     <!-- Logo WiseWork -->
     <div class="navbar-header">
-        <a class="navbar-brand navbar-icon" href="#/accueil"><img src="./img/WiseWork_Logo.png" /></a>
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-warning-collapse"></button>
+        <a class="navbar-brand navbar-icon" href="javascript:void(0)"><img src="./img/WiseWork_Logo.png" /></a>
+        <span class="navbar-brand">{{nomSalon}}</span>
     </div>
     <div style="margin-right: 50px" class="navbar-collapse collapse navbar-warning-collapse">
         <ul class="nav navbar-nav navbar-right">
@@ -13,6 +21,7 @@
                 <!-- Menu profil -->
                 <a href="bootstrap-elements.html" data-target="#" class="dropdown-toggle" data-toggle="dropdown"> {{CurrentUser.Prenom}} {{CurrentUser.Nom}} <b class="caret"></b></a>
                 <ul class="dropdown-menu">
+                    <li><a href="#/contact/{{CurrentUser.Id}}">Consulter mon mur</a></li>
                     <li><a href="#/modificationProfil">Modifier profil</a></li>
                     <li class="divider"></li>
                     <li><a href="#/deconnexion">Déconnexion</a></li>

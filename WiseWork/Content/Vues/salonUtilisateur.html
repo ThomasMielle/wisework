@@ -12,7 +12,6 @@
         <div class="col-md-4" style="padding-top:30px">{{proprio.Description}}</div>
     </div>
     <div class="list-group" id="main-container-salonUtilisateur" style="margin-top:10px">
-        <h1 style="text-align:center">{{nomSalon}}</h1>
         <div ng-repeat="msg in ListMessage | filter:query">
             <div class="list-group-item">
                 <div ng-switch on="msg.Tag">

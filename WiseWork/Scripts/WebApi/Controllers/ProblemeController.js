@@ -9,7 +9,7 @@ WiseWorkController.controller('ctrl_probleme', function ($scope, $rootScope, $ht
     ];
 
     //$scope.listProbleme = new Array("Les messages ne s'affiche pas.", "Impossible de voir les salons");
-
+    $rootScope.nomSalon = "Problèmes utilisateurs"
     $scope.ajouterProbleme = function () {
         if ($scope.description != "") {
             $scope.listProbleme[$scope.listProbleme.length] = $scope.description;

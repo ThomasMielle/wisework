@@ -10,4 +10,5 @@ WiseWorkController.controller('ctrl_accueil', function ($scope, $rootScope, $htt
         //LocalDatabase.listUser = response.data;
         $rootScope.listUser = response.data;
     });
+    $rootScope.nomSalon = "Fil d'actualité";
 });

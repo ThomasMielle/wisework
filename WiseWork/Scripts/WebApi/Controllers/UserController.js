@@ -1,6 +1,6 @@
 ﻿
 WiseWorkController.controller('ctrl_modif_user', function ($scope, $rootScope, $http, UserService, $location) {
-
+    $rootScope.nomSalon = "Modification des informations personnelles";
     $scope.identifiant = {};
     $scope.identifiant.id = $scope.CurrentUser.Id;
     $scope.identifiant.login = '';
